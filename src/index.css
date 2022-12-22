@@ -1,0 +1,36 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #1B212C;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.paraphrase-container {
+  @apply text-base;
+}
+
+.input-container {
+  @apply bg-[#2d3848] border border-white;
+}
+
+.sendBtn {
+  @apply rounded-md float-right border border-white px-6 py-2;
+}
+
+.sendingBtn {
+  @apply bg-white text-[#1B212C];
+}
