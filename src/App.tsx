@@ -1,6 +1,7 @@
 import Paraphraser from './components/pages/Paraphraser'
 import { Outlet, Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import Home from './components/Home';
 const SidebarItem = ({ title, route }: any) => {
   return(
@@ -12,9 +13,9 @@ const SidebarItem = ({ title, route }: any) => {
   )
 }
 
+
 function App() {
   let location = useLocation();
-  console.log('location', location)
   const sideBarItems = [
     {
       title: "Paraphraser",
@@ -24,8 +25,12 @@ function App() {
       title: "Reminder",
       route: "reminders"
     },
+    {
+      title: "Shawtawt",
+      route: "shawtawt"
+    }
   ]
-  console.log('Outlet', Outlet)
+
   return (
     <div className='mt-32'>
       <div className="w-screen flex min-w-[calc(100vh-8rem)]" aria-label="Sidebar">
@@ -33,7 +38,7 @@ function App() {
           <ul className="space-y-2">
             {
               sideBarItems?.map((item) => {
-                return <SidebarItem title={item.title} route={item.route} />
+                return <SidebarItem key={item.title} title={item.title} route={item.route} />
               })
             }
           </ul>
