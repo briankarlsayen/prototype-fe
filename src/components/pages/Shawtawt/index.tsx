@@ -1,12 +1,14 @@
 import { useEffect, useState, Dispatch, SetStateAction } from 'react'
 import { CiMaximize1  } from "react-icons/ci";
-import { FaExpandAlt  } from "react-icons/fa";
+import { FaExpandAlt, FaEdit, FaMinus } from "react-icons/fa";
 import { ShawtawtItem, ShawtawtProps } from '../../../../types';
 // TODO
-// [ ] Display shout outs
+// [x] Display shout outs
+// [ ] sort by time every add, make it functional
 // [ ] change diplay by predetermined time
-// [ ] save shout outs on local storage
-// [ ] use modal for the form
+// [x] save shout outs on local storage
+// [x] use modal for the form
+// [ ] show edit icon when hovered
 
 interface IProps {
   items: ShawtawtItem[];
@@ -14,6 +16,9 @@ interface IProps {
   // setShawtInput?: (value: string | ((prevVar: string) => string)) => void;
   setShawtInput?: any;
   submitHandler?: any;
+  editHandler?: any;
+  deleteHandler?: any;
+  editId?: Number | null;
   // submitHandler?: (s:string) => void;
 }
 
@@ -22,43 +27,7 @@ const Shawtawt = () => {
   const [shawtInput, setShawtInput] = useState("")
   const [items, setItems] = useState<ShawtawtItem[]>([]);
   const [shawtawtObj, setShawtawtObj] = useState<ShawtawtItem>()
-  const itemArr: ShawtawtItem[] = [
-    {
-      id: 1,
-      time: '13:20',
-      title: 'Display shout outs 1'
-    },
-    {
-      id: 2,
-      time: '11:00',
-      title: 'Display shout outs 2'
-    },
-    {
-      id: 3,
-      time: '13:00',
-      title: 'Display shout outs 3'
-    },
-    {
-      id: 4,
-      time: '13:40',
-      title: 'Display shout outs 3'
-    },
-    {
-      id: 5,
-      time: '11:10',
-      title: 'Display shout outs 3'
-    },
-    {
-      id: 6,
-      time: '17:10',
-      title: 'Display shout outs 4'
-    },
-    {
-      id: 7,
-      time: '17:00',
-      title: 'Display shout outs 5'
-    },
-  ]
+  const [editId, setEditId] = useState<Number | null>(null) // not null then isEditing
   
 
   useEffect(()=> {
@@ -69,13 +38,17 @@ const Shawtawt = () => {
     displayShawtout(items)
   },[items])
 
-  const getItems = () => {
-    setItems(itemArr)
-    displayShawtout(itemArr)
-  }
+  useEffect(()=> {
+    if(shawtInput === "") setEditId(null)
+  },[shawtInput])
 
-  // TODO sort time
-  // TODO show most recent
+  const getItems = () => {
+    const shawtItems = localStorage.getItem('shawtawt');
+    if(shawtItems) {
+      let parsedCart = JSON.parse(shawtItems);
+      setItems(parsedCart)
+    }
+  }
 
   const itemSorterHr = (a:any, b:any) => {
     const hour1 = a.hour;
@@ -84,6 +57,18 @@ const Shawtawt = () => {
     if (hour1 < hour2) {
       comparison = -1;
     } else if (hour1 > hour2) {
+        comparison = 1;
+    }
+    return comparison;
+  }
+
+  const itemSorterId = (a:any, b:any) => {
+    const id1 = a.id;
+    const id2 = b.id;
+    let comparison = 0;
+    if (id1 < id2) {
+      comparison = -1;
+    } else if (id1 > id2) {
         comparison = 1;
     }
     return comparison;
@@ -135,25 +120,65 @@ const Shawtawt = () => {
   }
 
   // input form 10:00-title name
-  const submitHandler = (e:any) => {
+  const submitHandler = async(e:any) => {
     e.preventDefault();
+    
     const textArr = shawtInput.split('-')
-    console.log('textArr', textArr)
+    const getHighest = Math.max.apply(Math, items.map(function(o) { return o.id; }))
+    console.log('getHighest', getHighest)
+
+    const generateId = getHighest > 0 ? getHighest : items.length;
+
     const newItem = {
-      id: items.length + 1,
+      id: typeof editId === "number"  ? editId : generateId + 1,
       time: textArr[0],
       title: textArr[1],
     }
-    setItems([...items, newItem])
-    // setShawtInput("")
+
+    let itemsArr = []
+    if(editId) {
+      const newItems = deleteHandler()
+      itemsArr=[...newItems, newItem]
+      itemsArr.sort(itemSorterId)
+      setItems(itemsArr)
+      localStorage.setItem('shawtawt', JSON.stringify([...newItems, newItem]));
+    } else {
+      itemsArr=[...items, newItem]
+      itemsArr.sort(itemSorterId)
+      setItems(itemsArr)
+      localStorage.setItem('shawtawt', JSON.stringify([...items, newItem]));
+    }
+    
+    setShawtInput("")
+  }
+
+  const editHandler = (id: number) => {
+    const [editItem] = items.filter((data)=> id === data.id)
+    const editText = `${editItem.time}-${editItem.title}`
+    setShawtInput(editText)
+    setEditId(id)
+  }
+
+  const deleteHandler = () => {
+    const newItems = items.filter((data)=> editId !== data.id)
+    setItems(newItems)
+    localStorage.setItem('shawtawt', JSON.stringify(newItems));
+    setShawtInput("")
+    return newItems
   }
 
   return (
     <div className='flex text-center relative'>
-      <h1 className='text-7xl flex-1'>{shawtawtObj?.title}</h1>
+      <h1 className='text-7xl flex-1'>{shawtawtObj?.title ? shawtawtObj?.title : "Waiting for shawtawt"}</h1>
       <FaExpandAlt onClick={modalHandler} className='w-10 h-10 p-1 rounded-md border border-white cursor-pointer fixed bottom-10 right-10' />
       { modalShow ? 
-        <ItemModal items={items} submitHandler={submitHandler} shawtInput={shawtInput} setShawtInput={setShawtInput} /> : null
+        <ItemModal items={items} 
+        submitHandler={submitHandler} 
+        shawtInput={shawtInput} 
+        setShawtInput={setShawtInput}
+        editHandler={editHandler}
+        deleteHandler={deleteHandler}
+        editId={editId} /> : null
       }
     </div>
   )
@@ -167,16 +192,22 @@ const ItemModal = (props: IProps) => {
               <ul className='text-justify max-h-80 overflow-auto'>
                 { props.items.map((item: ShawtawtItem) => {
                   return (
-                    <li key={item.id} className='items-center py-2'>
-                      {item.time} - {item.title}
+                    <li key={item.id} className='flex items-center py-2'>
+                      <p className='flex-1'>{item.time} - {item.title}</p>
+                      <span className='cursor-pointer hover:text-gray-400' onClick={()=>props.editHandler(item.id)}>
+                        <FaEdit />
+                      </span>
                     </li>
                   )
                 })}
               </ul>
-              <div>
+              <div className='relative'>
                 <form onSubmit={e=>props.submitHandler(e)}>
                   <input placeholder='add shawtawt' value={props.shawtInput} onChange={(e)=>props.setShawtInput(e.target.value)} className='w-full p-2 rounded-md capitalize' />
                 </form>
+                { props.editId && props.shawtInput ? 
+                  <span className='absolute top-2 right-4 cursor-pointer hover:text-red-600' onClick={props.deleteHandler}>x</span> : null
+                }
               </div>
             </div>
         </div>
