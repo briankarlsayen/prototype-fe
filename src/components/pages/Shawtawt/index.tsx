@@ -1,25 +1,20 @@
-import { useEffect, useState, Dispatch, SetStateAction } from 'react'
-import { CiMaximize1  } from "react-icons/ci";
+import { useEffect, useState } from 'react'
 import { FaExpandAlt, FaEdit, FaMinus } from "react-icons/fa";
 import { ShawtawtItem, ShawtawtProps } from '../../../../types';
-// TODO
-// [x] Display shout outs
-// [ ] sort by time every add, make it functional
-// [ ] change diplay by predetermined time
-// [x] save shout outs on local storage
-// [x] use modal for the form
+
+// enchancements
 // [ ] show edit icon when hovered
 
 interface IProps {
   items: ShawtawtItem[];
   shawtInput?: string;
-  // setShawtInput?: (value: string | ((prevVar: string) => string)) => void;
   setShawtInput?: any;
   submitHandler?: any;
   editHandler?: any;
   deleteHandler?: any;
   editId?: Number | null;
-  // submitHandler?: (s:string) => void;
+  formatInput?: any;
+  setInputPress?: any;
 }
 
 const Shawtawt = () => {
@@ -28,26 +23,41 @@ const Shawtawt = () => {
   const [items, setItems] = useState<ShawtawtItem[]>([]);
   const [shawtawtObj, setShawtawtObj] = useState<ShawtawtItem>()
   const [editId, setEditId] = useState<Number | null>(null) // not null then isEditing
+  const [inputPress, setInputPress] = useState(null);
   
-
   useEffect(()=> {
     getItems()
   },[])
 
   useEffect(()=> {
     displayShawtout(items)
-  },[items])
+    if(items.length) {
+      const intervalId = setInterval(() => {
+        // call display every min
+        displayShawtout(items)
+      }, 1000 * 60)
+      return ()=> {
+        clearInterval(intervalId)
+      }
+    }
+  },[items]);
 
   useEffect(()=> {
     if(shawtInput === "") setEditId(null)
   },[shawtInput])
 
-  const getItems = () => {
-    const shawtItems = localStorage.getItem('shawtawt');
-    if(shawtItems) {
-      let parsedCart = JSON.parse(shawtItems);
-      setItems(parsedCart)
-    }
+  const sortShawtawt = (props: ShawtawtItem[]) => {
+    const timeArr = props.map((item) => {
+      const [itemHr, itemMin] = item.time.split(':')
+      return {
+        ...item,
+        hour: Number(itemHr),
+        min: Number(itemMin)
+      }
+    })
+    timeArr.sort(itemSorterMin)
+    timeArr.sort(itemSorterHr)
+    return timeArr
   }
 
   const itemSorterHr = (a:any, b:any) => {
@@ -86,25 +96,63 @@ const Shawtawt = () => {
     return comparison;
   }
 
+  const formatInput = (e:any) => {
+    if(inputPress != "Backspace") {
+      switch(shawtInput.length) {
+      case 0:
+        if(Number(e)) {
+          if(Number(e) !== 1 && Number(e) !== 2) {
+            setShawtInput(`0${e}:`)
+          } else {
+            setShawtInput(e)
+          }
+        }
+        break;
+      case 1:
+        if(Number(e)) {
+          if(Number(e) < 24) {
+            setShawtInput(`${e}:`)
+          }
+        }
+        break;
+      case 3:
+        if(Number(e[3]) < 6) {
+          setShawtInput(e)
+        } else if(Number(e[3] == 6)) {
+          console.log('haha')
+          setShawtInput(`${e}0-`)
+        }
+        break;
+      case 4:
+        console.log('hehe', Number(e[4]) )
+        if(Number(e[4]) || Number(e[4]) === 0) setShawtInput(`${e}-`)
+        break;
+      default:
+        setShawtInput(e)
+        break;
+      }
+    } else {
+      setShawtInput(shawtInput.substring(0,shawtInput.length -1))
+    }
+  }
+
+  const getItems = () => {
+    const shawtItems = localStorage.getItem('shawtawt');
+    if(shawtItems) {
+      let parsedCart: ShawtawtItem[] = JSON.parse(shawtItems);
+      const sortedItems = sortShawtawt(parsedCart)
+      setItems(sortedItems)
+      return sortedItems
+    }
+  }
 
   const displayShawtout = (itemArr: ShawtawtItem[]) => {
     const dateNow = new Date()
     const hours = dateNow.getHours()
     const minutes = dateNow.getMinutes()
 
-    // extract hrs and min from array
-    const timeArr = itemArr.map((item) => {
-      const [itemHr, itemMin] = item.time.split(':')
-      return {
-        ...item,
-        hour: Number(itemHr),
-        min: Number(itemMin)
-      }
-    })
-    timeArr.sort(itemSorterMin)
-    timeArr.sort(itemSorterHr)
-    const filteredItems = timeArr.filter((item) => hours > item.hour || (hours === item.hour && minutes >= item.min))
-    console.log('filteredItems', filteredItems)
+    const sortedItems = sortShawtawt(itemArr)
+    const filteredItems = sortedItems.filter((item) => hours > item.hour || (hours === item.hour && minutes >= item.min))
     const idx = filteredItems.map((item) => {
       if(hours >= item.hour) {
         return item.id
@@ -122,11 +170,15 @@ const Shawtawt = () => {
   // input form 10:00-title name
   const submitHandler = async(e:any) => {
     e.preventDefault();
+
+    const re = new RegExp(/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]-[a-zA-Z0-9 ]*$/)
+    const check = re.test(shawtInput);
+    if(!check) {
+      return alert('Not allowed to input special characters')
+    }
     
     const textArr = shawtInput.split('-')
     const getHighest = Math.max.apply(Math, items.map(function(o) { return o.id; }))
-    console.log('getHighest', getHighest)
-
     const generateId = getHighest > 0 ? getHighest : items.length;
 
     const newItem = {
@@ -139,13 +191,13 @@ const Shawtawt = () => {
     if(editId) {
       const newItems = deleteHandler()
       itemsArr=[...newItems, newItem]
-      itemsArr.sort(itemSorterId)
-      setItems(itemsArr)
+      const sortedItems = sortShawtawt(itemsArr)
+      setItems(sortedItems)
       localStorage.setItem('shawtawt', JSON.stringify([...newItems, newItem]));
     } else {
       itemsArr=[...items, newItem]
-      itemsArr.sort(itemSorterId)
-      setItems(itemsArr)
+      const sortedItems = sortShawtawt(itemsArr)
+      setItems(sortedItems)
       localStorage.setItem('shawtawt', JSON.stringify([...items, newItem]));
     }
     
@@ -169,7 +221,7 @@ const Shawtawt = () => {
 
   return (
     <div className='flex text-center relative'>
-      <h1 className='text-7xl flex-1'>{shawtawtObj?.title ? shawtawtObj?.title : "Waiting for shawtawt"}</h1>
+      <h1 className='text-7xl flex-1'>{shawtawtObj?.title ? shawtawtObj?.title : ""}</h1>
       <FaExpandAlt onClick={modalHandler} className='w-10 h-10 p-1 rounded-md border border-white cursor-pointer fixed bottom-10 right-10' />
       { modalShow ? 
         <ItemModal items={items} 
@@ -178,7 +230,9 @@ const Shawtawt = () => {
         setShawtInput={setShawtInput}
         editHandler={editHandler}
         deleteHandler={deleteHandler}
-        editId={editId} /> : null
+        editId={editId}
+        formatInput={formatInput}
+        setInputPress={setInputPress} /> : null
       }
     </div>
   )
@@ -192,7 +246,7 @@ const ItemModal = (props: IProps) => {
               <ul className='text-justify max-h-80 overflow-auto'>
                 { props.items.map((item: ShawtawtItem) => {
                   return (
-                    <li key={item.id} className='flex items-center py-2'>
+                    <li key={item.id} className='flex items-center p-2'>
                       <p className='flex-1'>{item.time} - {item.title}</p>
                       <span className='cursor-pointer hover:text-gray-400' onClick={()=>props.editHandler(item.id)}>
                         <FaEdit />
@@ -203,7 +257,10 @@ const ItemModal = (props: IProps) => {
               </ul>
               <div className='relative'>
                 <form onSubmit={e=>props.submitHandler(e)}>
-                  <input placeholder='add shawtawt' value={props.shawtInput} onChange={(e)=>props.setShawtInput(e.target.value)} className='w-full p-2 rounded-md capitalize' />
+                  <input placeholder='add shawtawt' value={props.shawtInput} 
+                  onKeyDown={e=>props.setInputPress(e.key)} 
+                  onChange={(e)=>props.formatInput(e.target.value)} 
+                  className='w-full p-2 rounded-md capitalize' />
                 </form>
                 { props.editId && props.shawtInput ? 
                   <span className='absolute top-2 right-4 cursor-pointer hover:text-red-600' onClick={props.deleteHandler}>x</span> : null
@@ -216,4 +273,4 @@ const ItemModal = (props: IProps) => {
 }
 
 
-export default Shawtawt
+export default Shawtawt 
