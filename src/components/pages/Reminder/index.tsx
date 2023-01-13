@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Reminder = () => {
   return (
     <div className='w-full flex justify-center'>

@@ -4,9 +4,16 @@ import { FaBars } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import Home from './components/Home';
 
+interface IProps {
+  title: string;
+  route: string;
+  loc: string;
+  setModalShow?: any;
+}
+
 const breakPoint = 768;
 
-const SidebarItem = ({ title, route, loc, setModalShow }: any) => {
+const SidebarItem = ({ title, route, loc, setModalShow }: IProps) => {
   return(
     <li className={loc === route ? 'bg-gray-700 rounded-lg' : ''}>
       <Link onClick={window.innerWidth >= breakPoint ? undefined : ()=>setModalShow(false)} to={route}>
