@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { FaExpandAlt, FaEdit, FaMinus } from "react-icons/fa";
 import { ShawtawtItem, ShawtawtProps } from '../../../../types';
-
 // enchancements
 // [ ] show edit icon when hovered
 
@@ -220,9 +219,9 @@ const Shawtawt = () => {
   }
 
   return (
-    <div className='flex text-center relative'>
+    <div className='flex text-center relative h-full pb-32 items-center'>
       <h1 className='text-7xl flex-1'>{shawtawtObj?.title ? shawtawtObj?.title : ""}</h1>
-      <FaExpandAlt onClick={modalHandler} className='w-10 h-10 p-1 rounded-md border border-white cursor-pointer fixed bottom-10 right-10' />
+      <FaExpandAlt onClick={modalHandler} className={modalShow ? 'expand-btn-active' : 'expand-btn-inactive'} />
       { modalShow ? 
         <ItemModal items={items} 
         submitHandler={submitHandler} 

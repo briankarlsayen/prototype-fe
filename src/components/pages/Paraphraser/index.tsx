@@ -38,9 +38,9 @@ function Paraphraser() {
   }, [timer, timerCount])
   return (
     <div className='paraphrase-container'>
-      <div className='flex flex-col m-auto justify-center align-middle items-center md:w-[50rem]  w-full'>
+      <div className='flex flex-col m-auto justify-center align-middle items-center max-w-[50rem] md:max-w-full w-full'>
         <h1 className='text-3xl py-4'>Text paraphraser</h1>
-        <div className='max-w-[95vw] w-full'>
+        <div className='max-w-[95vw] md:max-w-[50rem] w-full'>
           <TextareaAutosize className='input-container rounded-md w-full p-4 outline-none' autoFocus minRows={6} value={inputText} onChange={(e)=>setInputText(e.target.value)} />
           { clicked ? 
             <button className='sendBtn sendingBtn'>Send</button> :
@@ -48,7 +48,7 @@ function Paraphraser() {
           }
         </div>
         {resultText ? <p className='pt-4 text-xl'>Result</p> : null}
-        <p className='pt-4 max-w-[95vw] w-full'>{resultText}</p>
+        <p className='pt-4 max-w-[95vw] md:max-w-[50rem] w-full'>{resultText}</p>
       </div>
     </div>
   )

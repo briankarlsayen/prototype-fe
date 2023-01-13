@@ -3,7 +3,7 @@ import React from 'react'
 const Reminder = () => {
   return (
     <div className='w-full flex justify-center'>
-      <div className='flex flex-col w-[50rem] text-center'>
+      <div className='flex flex-col w-full text-center'>
         <h1 className='text-3xl pt-4 text-center'>Reminder</h1>
         <h2 className='uppercase text-sm pb-8 text-[#979797]'>Comming soon!</h2>
         {/* <h3 className='text-xl'>Comming soon</h3> */}
