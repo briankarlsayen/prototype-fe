@@ -16,6 +16,8 @@ const EmailPromo = () => {
   const [addOpt, setAddOpt] = useState(false);
   const [showBusinessOpt, setShowBusinessOpt] = useState(true);
   const [spinAction, setSpinAction] = useState(false);
+  const [mainSpinAction, setMainSpinAction] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const updateField = (e: any) => {
     // * check if tone > business is selected, show business settings
@@ -38,9 +40,11 @@ const EmailPromo = () => {
     }
   };
 
-  const generateHandler = (e: any) => {
+  const generateHandler = async (e: any) => {
     e.preventDefault();
-    generateEmail();
+    setSpinAction(true);
+    await generateEmail();
+    setSpinAction(false);
   };
 
   const handleAddSettings = () => {
@@ -140,10 +144,13 @@ const EmailPromo = () => {
     //   setSpinAction(false);
     // }, 5000);
     await generateEmail();
+    setCopied(false);
+
     setSpinAction(false);
   };
 
   const copyPassword = () => {
+    setCopied(true);
     navigator.clipboard.writeText(rawMessage).then(() => console.log("copy"));
   };
 
@@ -219,7 +226,10 @@ const EmailPromo = () => {
           </div>
           <button
             type="submit"
-            className="bg-white text-black px-4 py-2 rounded-md float-right mt-4 hover:bg-slate-200"
+            className={`mt-8 float-right btn btn-outline btn-info ${
+              spinAction && "loading"
+            }`}
+            // className="bg-white text-black px-4 py-2 rounded-md float-right mt-4 hover:bg-slate-200 "
           >
             Generate
           </button>
@@ -231,15 +241,17 @@ const EmailPromo = () => {
           {mailMessage && (
             <div className="float-right flex gap-4">
               <button
+                data-tip="refresh"
                 className={`cursor-pointer hover:text-gray-300 ${
-                  spinAction && "animate-spin"
+                  spinAction ? "animate-spin" : "tooltip"
                 }`}
                 onClick={regenerateEmail}
               >
-                <FaSyncAlt title="reload" />
+                <FaSyncAlt title="reload" className="" />
               </button>
               <button
-                className=" cursor-pointer hover:text-gray-300 "
+                data-tip={copied ? "copied" : "copy"}
+                className="tooltip cursor-pointer hover:text-gray-300 "
                 onClick={copyPassword}
               >
                 <FaRegCopy title="copy" />
