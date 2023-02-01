@@ -38,6 +38,10 @@ function App() {
     {
       title: "Shawtawt",
       route: "/shawtawt"
+    },
+    {
+      title: "EmailPromo",
+      route: "/emailpromo"
     }
   ]
 

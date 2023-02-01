@@ -11,6 +11,7 @@ import Paraphraser from './components/pages/Paraphraser';
 import Reminder from './components/pages/Reminder';
 import NotFound from './components/pages/NotFound';
 import Shawtawt from './components/pages/Shawtawt';
+import EmailPromo from './components/pages/EmailPromo';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/shawtawt",
         element: <Shawtawt />,
+      },
+      {
+        path: "/emailpromo",
+        element: <EmailPromo />,
       },
     ],
   },
