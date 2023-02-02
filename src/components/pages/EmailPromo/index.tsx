@@ -2,8 +2,16 @@ import { useState } from "react";
 import { FaRegCopy, FaSyncAlt, FaCaretDown } from "react-icons/fa";
 import axios from "../../../api/axios";
 
+interface InputSettingProps {
+  recipient: string;
+  sender: string;
+  description: string;
+  tone: "business" | "casual";
+  promotion: boolean;
+}
+
 const EmailPromo = () => {
-  const [inputSettings, setInputSettings] = useState({
+  const [inputSettings, setInputSettings] = useState<InputSettingProps>({
     recipient: "",
     sender: "",
     description: "",
@@ -16,7 +24,6 @@ const EmailPromo = () => {
   const [addOpt, setAddOpt] = useState(false);
   const [showBusinessOpt, setShowBusinessOpt] = useState(true);
   const [spinAction, setSpinAction] = useState(false);
-  const [mainSpinAction, setMainSpinAction] = useState(false);
   const [copied, setCopied] = useState(false);
 
   const updateField = (e: any) => {
@@ -56,10 +63,7 @@ const EmailPromo = () => {
       // const emailMessage =
       //   "\n\nHello Nazer,\n\nThank you for your interest in our promotional products! We would be more than happy to help you promote your business with our high-quality products.\n\nOur team of experts can help you choose the perfect promotional products to fit your needs and budget. We offer a wide variety of products, including custom-printed t-shirts, pens, and more.\n\nWe would be honored to help you promote your business and would love to discuss your promotional needs further. Please feel free to contact us at any time.\n\nThank you,\n\nBrian";
       const response = await axios.post("/generateemail", {
-        recipient: inputSettings.recipient,
-        sender: inputSettings.sender,
-        description: inputSettings.description,
-        tone: inputSettings.tone,
+        ...inputSettings,
       });
 
       const emailMessage = response.data.data;
@@ -118,14 +122,10 @@ const EmailPromo = () => {
                       type="checkbox"
                       name="promotion"
                       id="promotion"
-                      className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
+                      className="toggle"
                       onChange={updateField}
                       checked={inputSettings.promotion}
                     />
-                    <label
-                      htmlFor="promotion"
-                      className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-600 cursor-pointer"
-                    ></label>
                   </div>
                 </section>
               )}
