@@ -155,7 +155,7 @@ const EmailPromo = () => {
   };
 
   return (
-    <div className="flex gap-4 h-full ">
+    <div className="flex gap-4 h-full">
       <div className="basis-1/3 bg-slate-700 border border-white rounded-lg p-4">
         <h4>Generate:</h4>
         <form onSubmit={generateHandler}>

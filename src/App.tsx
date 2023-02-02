@@ -66,6 +66,11 @@ function App() {
       route: "/emailpromo",
       description: "create an email message with given settings using ai",
     },
+    {
+      title: "EmailSend",
+      route: "/emailsend",
+      description: "verify email address and send email",
+    },
   ];
 
   const checkWinWidth = () => {

@@ -29,6 +29,24 @@
   background-color: #1b212c;
 }
 
+.mult-email-input__input {
+  @apply text-gray-300 shadow-none  !important;
+  /* color: white !important;
+  outline-color: red; */
+}
+
+.mult-email-input__control {
+  @apply input input-bordered w-full text-sm shadow-none h-full py-2 !important;
+}
+
+.mult-email-input__indicator:hover {
+  @apply text-white cursor-pointer !important;
+}
+
+.mult-email-input__multi-value__remove:hover {
+  @apply bg-gray-600 text-white !important;
+}
+
 .fit-height {
   height: fit-content !important;
 }
