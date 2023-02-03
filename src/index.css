@@ -36,7 +36,7 @@
 }
 
 .mult-email-input__control {
-  @apply input input-bordered w-full text-sm shadow-none h-full py-2 !important;
+  @apply input input-bordered w-full text-sm shadow-none h-full p-2 !important;
 }
 
 .mult-email-input__indicator:hover {
