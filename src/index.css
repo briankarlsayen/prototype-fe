@@ -5,8 +5,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #1b212c;
+  /* color: rgba(255, 255, 255, 0.87); */
+  /* background-color: #1b212c; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,6 +18,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+p,
+h1,
+h2,
+h3,
+h4 {
+  @apply text-black dark:text-gray-200;
+}
 
 .toggle-checkbox:checked {
   @apply: right-0 border-green-400;
@@ -56,7 +64,7 @@
 }
 
 .input-container {
-  @apply bg-[#2d3848] border border-white;
+  @apply dark:bg-[#2d3848] bg-gray-400 border border-white;
 }
 
 .sendBtn {
@@ -74,4 +82,24 @@
 
 .expand-btn-active {
   @apply w-10 h-10 p-1 rounded-md border cursor-pointer fixed bottom-10 right-10 z-50 text-gray-400 border-gray-400;
+}
+
+.custom-btn-bg {
+  @apply btn dark:bg-gray-100 bg-gray-700 dark:text-black text-gray-200 dark:hover:bg-gray-300;
+}
+
+.step-circle-active {
+  @apply w-10 h-10 bg-blue-600 mx-auto rounded-full text-lg text-white flex items-center cursor-pointer delay-500;
+}
+
+.step-circle {
+  @apply w-10 h-10 bg-white border-2 border-gray-200 mx-auto rounded-full text-lg text-white flex items-center cursor-pointer delay-500;
+}
+
+.step-bar-active {
+  @apply bg-blue-600 text-xs leading-none py-1 text-center text-gray-300 rounded duration-500 w-full ease-linear;
+}
+
+.step-bar {
+  @apply bg-blue-600 text-xs leading-none py-1 text-center text-gray-300 rounded w-[20%] delay-500 duration-500 ease-linear;
 }

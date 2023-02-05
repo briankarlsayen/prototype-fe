@@ -156,7 +156,7 @@ const EmailPromo = () => {
 
   return (
     <div className="flex gap-4 h-full">
-      <div className="basis-1/3 bg-slate-700 border border-white rounded-lg p-4">
+      <div className="basis-1/3 dark:bg-slate-700 bg:gray-200  border dark:border-white rounded-lg p-4">
         <h4>Generate:</h4>
         <form onSubmit={generateHandler}>
           <div className="pt-8">
@@ -235,9 +235,9 @@ const EmailPromo = () => {
           </button>
         </form>
       </div>
-      <div className="basis-2/3 bg-slate-700 border border-white rounded-lg p-4">
+      <div className="basis-2/3 dark:bg-slate-700 bg:gray-200 border dark:border-white rounded-lg p-4">
         <h4 className="pb-14">Result:</h4>
-        <div className="bg-gray-700 p-4 border border-gray-600 rounded-md min-h-[5rem]">
+        <div className="p-4 border dark:border-gray-200 border-gray-300 dark:bg-slate-700 bg:gray-200 rounded-md min-h-[5rem]">
           {mailMessage && (
             <div className="float-right flex gap-4">
               <button
@@ -260,7 +260,10 @@ const EmailPromo = () => {
           )}
           {mailMessage &&
             mailMessage.map((item, index) => (
-              <p className="bg-gray-700 text-base font-thin py-1" key={index}>
+              <p
+                className="dark:bg-slate-700 bg:gray-200 text-base font-thin py-1"
+                key={index}
+              >
                 {item}
               </p>
             ))}

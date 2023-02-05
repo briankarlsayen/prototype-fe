@@ -4,9 +4,9 @@ import EmailEditor from "react-email-editor";
 const Editor = ({ emailEditorRef, setSaved }: any) => {
   const onLoad = () => {
     const template = localStorage.getItem("design");
-    if (template)
+    if (template && emailEditorRef.current)
       emailEditorRef.current.editor.loadDesign(JSON.parse(template));
-    emailEditorRef.current.editor.addEventListener(
+    emailEditorRef.current?.editor.addEventListener(
       "design:updated",
       function () {
         setSaved(false);

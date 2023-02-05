@@ -67,7 +67,7 @@ const EmailSend = () => {
 
   const exportHtml = () => {
     if (emailEditorRef.current) {
-      emailEditorRef.current.editor.exportHtml((data: ExportProps) => {
+      emailEditorRef.current?.editor.exportHtml((data: ExportProps) => {
         const { design, html } = data;
         console.log("exportHtml", html);
       });

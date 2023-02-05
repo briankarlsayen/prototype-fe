@@ -10,6 +10,7 @@ import NotFound from "./components/pages/NotFound";
 import Shawtawt from "./components/pages/Shawtawt";
 import EmailPromo from "./components/pages/EmailPromo";
 import EmailSend from "./components/pages/EmailSend";
+import Onboarding from "./components/pages/Onboarding";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/reminders",
         element: <Reminder />,
+      },
+      {
+        path: "/onboarding",
+        element: <Onboarding />,
       },
     ],
   },
