@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/react-select": "^5.0.1",
     "axios": "^1.2.1",
     "daisyui": "^2.49.0",
     "jsonfile": "^6.1.0",
@@ -18,11 +19,10 @@
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.6.0",
     "react-select": "^5.7.0",
-    "react-textarea-autosize": "^8.4.0",
-    "write-json-file": "^5.0.0"
+    "react-textarea-autosize": "^8.4.0"
   },
   "devDependencies": {
-    "@types/jsonfile": "^6.1.1",
+    "@types/axios": "^0.14.0",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
     "@types/react-email-editor": "^1.5.1",
