@@ -1,0 +1,1827 @@
+{
+  "counters": {
+    "u_row": 9,
+    "u_column": 14,
+    "u_content_text": 8,
+    "u_content_image": 12,
+    "u_content_button": 4,
+    "u_content_social": 2,
+    "u_content_divider": 1,
+    "u_content_heading": 11
+  },
+  "body": {
+    "id": "4actiLddpG",
+    "rows": [
+      {
+        "id": "HdQo8GvtU2",
+        "cells": [
+          1
+        ],
+        "columns": [
+          {
+            "id": "lc6CaUQXQu",
+            "contents": [
+              {
+                "id": "xsNGgkynMp",
+                "type": "image",
+                "values": {
+                  "containerPadding": "230px 10px 45px",
+                  "anchor": "",
+                  "src": {
+                    "url": "https://cdn.templates.unlayer.com/assets/1673854078821-adf.png",
+                    "width": 574,
+                    "height": 360,
+                    "maxWidth": "89%",
+                    "autoWidth": false
+                  },
+                  "textAlign": "center",
+                  "altText": "image",
+                  "action": {
+                    "name": "web",
+                    "values": {
+                      "href": "",
+                      "target": "_blank"
+                    }
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_image_1",
+                    "htmlClassNames": "u_content_image"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "_override": {
+                    "mobile": {
+                      "src": {
+                        "maxWidth": "90%",
+                        "autoWidth": false
+                      },
+                      "containerPadding": "60px 10px 20px"
+                    }
+                  }
+                }
+              },
+              {
+                "id": "C_SpHluIO9",
+                "type": "heading",
+                "values": {
+                  "containerPadding": "0px 25px 60px",
+                  "anchor": "",
+                  "headingType": "h1",
+                  "fontFamily": {
+                    "url": "https://fonts.googleapis.com/css?family=Montserrat:400,700",
+                    "label": "Montserrat",
+                    "value": "'Montserrat',sans-serif",
+                    "defaultFont": true
+                  },
+                  "fontSize": "28px",
+                  "color": "#ffffff",
+                  "textAlign": "center",
+                  "lineHeight": "140%",
+                  "linkStyle": {
+                    "inherit": true,
+                    "linkColor": "#0000ee",
+                    "linkHoverColor": "#0000ee",
+                    "linkUnderline": true,
+                    "linkHoverUnderline": true
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_heading_3",
+                    "htmlClassNames": "u_content_heading"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<strong>Celebrate the Year of the Rabbit with Our Chinese New Year Sale!</strong>",
+                  "_override": {
+                    "mobile": {
+                      "fontSize": "18px",
+                      "containerPadding": "0px 10px 40px"
+                    }
+                  }
+                }
+              }
+            ],
+            "values": {
+              "_meta": {
+                "htmlID": "u_column_1",
+                "htmlClassNames": "u_column"
+              },
+              "border": {},
+              "padding": "0px",
+              "backgroundColor": ""
+            }
+          }
+        ],
+        "values": {
+          "displayCondition": null,
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "https://cdn.templates.unlayer.com/assets/1673854220224-Rectangle%202%20copy.png",
+            "fullWidth": false,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "top-center",
+            "width": 600,
+            "height": 822,
+            "customPosition": [
+              "50%",
+              "0%"
+            ]
+          },
+          "padding": "20px 0px 0px",
+          "anchor": "",
+          "hideDesktop": false,
+          "_meta": {
+            "htmlID": "u_row_1",
+            "htmlClassNames": "u_row"
+          },
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true,
+          "_override": {
+            "mobile": {
+              "backgroundImage": {
+                "url": "https://cdn.templates.unlayer.com/assets/1673814548298-mobile.png",
+                "size": "custom",
+                "width": 320,
+                "height": 438,
+                "repeat": "no-repeat",
+                "position": "top-center",
+                "fullWidth": false,
+                "customPosition": [
+                  "50%",
+                  "0%"
+                ]
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "l6QHlMSgDA",
+        "cells": [
+          1
+        ],
+        "columns": [
+          {
+            "id": "CC0_aL3P0f",
+            "contents": [
+              {
+                "id": "-Zpi5mgRvS",
+                "type": "heading",
+                "values": {
+                  "containerPadding": "60px 35px 0px",
+                  "anchor": "",
+                  "headingType": "h1",
+                  "fontFamily": {
+                    "url": "https://fonts.googleapis.com/css?family=Montserrat:400,700",
+                    "label": "Montserrat",
+                    "value": "'Montserrat',sans-serif",
+                    "defaultFont": true
+                  },
+                  "fontSize": "30px",
+                  "textAlign": "center",
+                  "lineHeight": "140%",
+                  "linkStyle": {
+                    "inherit": true,
+                    "linkColor": "#0000ee",
+                    "linkHoverColor": "#0000ee",
+                    "linkUnderline": true,
+                    "linkHoverUnderline": true
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_heading_5",
+                    "htmlClassNames": "u_content_heading"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<strong>Latest Collection</strong>",
+                  "_override": {
+                    "mobile": {
+                      "fontSize": "24px",
+                      "containerPadding": "40px 10px 0px"
+                    }
+                  }
+                }
+              },
+              {
+                "id": "ZW2LLNsJiD",
+                "type": "text_deprecated",
+                "values": {
+                  "containerPadding": "5px 50px 10px",
+                  "anchor": "",
+                  "textAlign": "center",
+                  "lineHeight": "140%",
+                  "linkStyle": {
+                    "inherit": true,
+                    "linkColor": "#0000ee",
+                    "linkHoverColor": "#0000ee",
+                    "linkUnderline": true,
+                    "linkHoverUnderline": true
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_text_2",
+                    "htmlClassNames": "u_content_text"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<p style=\"font-size: 14px; line-height: 140%;\">Lorem ipsum dolor sit amet, consectetur adip iscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspend isse ultrices gravida risus commodo viverra.</p>",
+                  "_override": {
+                    "mobile": {
+                      "containerPadding": "5px 10px 10px"
+                    }
+                  }
+                }
+              },
+              {
+                "id": "7MVJIqYEve",
+                "type": "button",
+                "values": {
+                  "containerPadding": "10px 10px 60px",
+                  "anchor": "",
+                  "href": {
+                    "name": "web",
+                    "values": {
+                      "href": "https://www.unlayer.com",
+                      "target": "_blank"
+                    },
+                    "attrs": {
+                      "href": "{{href}}",
+                      "target": "{{target}}"
+                    }
+                  },
+                  "buttonColors": {
+                    "color": "#FFFFFF",
+                    "backgroundColor": "#d10406",
+                    "hoverColor": "#FFFFFF",
+                    "hoverBackgroundColor": "#3AAEE0"
+                  },
+                  "size": {
+                    "autoWidth": false,
+                    "width": "28%"
+                  },
+                  "fontSize": "14px",
+                  "textAlign": "center",
+                  "lineHeight": "120%",
+                  "padding": "10px 20px",
+                  "border": {},
+                  "borderRadius": "4px",
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_button_2",
+                    "htmlClassNames": "u_content_button"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<strong><span style=\"font-size: 14px; line-height: 16.8px;\">Shop Now</span></strong>",
+                  "_override": {
+                    "mobile": {
+                      "size": {
+                        "width": "65%",
+                        "autoWidth": false
+                      },
+                      "containerPadding": "10px 10px 40px"
+                    }
+                  },
+                  "calculatedWidth": 162,
+                  "calculatedHeight": 37
+                }
+              }
+            ],
+            "values": {
+              "_meta": {
+                "htmlID": "u_column_2",
+                "htmlClassNames": "u_column"
+              },
+              "border": {},
+              "padding": "0px",
+              "borderRadius": "0px",
+              "backgroundColor": "#ffffff"
+            }
+          }
+        ],
+        "values": {
+          "displayCondition": null,
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "center"
+          },
+          "padding": "0px",
+          "anchor": "",
+          "hideDesktop": false,
+          "_meta": {
+            "htmlID": "u_row_2",
+            "htmlClassNames": "u_row"
+          },
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true
+        }
+      },
+      {
+        "id": "cotVoe5I4H",
+        "cells": [
+          52.17,
+          47.83
+        ],
+        "columns": [
+          {
+            "id": "MZiBKuYpng",
+            "contents": [
+              {
+                "id": "2Q4s6lrp7A",
+                "type": "image",
+                "values": {
+                  "containerPadding": "5px",
+                  "anchor": "",
+                  "src": {
+                    "url": "https://cdn.templates.unlayer.com/assets/1673813549458-Layer%203.png",
+                    "width": 542,
+                    "height": 439
+                  },
+                  "textAlign": "center",
+                  "altText": "image",
+                  "action": {
+                    "name": "web",
+                    "values": {
+                      "href": "",
+                      "target": "_blank"
+                    }
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_image_2",
+                    "htmlClassNames": "u_content_image"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true
+                }
+              }
+            ],
+            "values": {
+              "_meta": {
+                "htmlID": "u_column_3",
+                "htmlClassNames": "u_column"
+              },
+              "border": {},
+              "padding": "0px",
+              "borderRadius": "0px",
+              "backgroundColor": "#ffffff"
+            }
+          },
+          {
+            "id": "82dvoJr5nU",
+            "contents": [
+              {
+                "id": "CAo3qHylqL",
+                "type": "heading",
+                "values": {
+                  "containerPadding": "25px 10px 0px 15px",
+                  "anchor": "",
+                  "headingType": "h1",
+                  "fontFamily": {
+                    "url": "https://fonts.googleapis.com/css?family=Montserrat:400,700",
+                    "label": "Montserrat",
+                    "value": "'Montserrat',sans-serif",
+                    "defaultFont": true
+                  },
+                  "fontSize": "25px",
+                  "color": "#d10406",
+                  "textAlign": "left",
+                  "lineHeight": "140%",
+                  "linkStyle": {
+                    "inherit": true,
+                    "linkColor": "#0000ee",
+                    "linkHoverColor": "#0000ee",
+                    "linkUnderline": true,
+                    "linkHoverUnderline": true
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_heading_8",
+                    "htmlClassNames": "u_content_heading"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<strong>Women's Fashion Accessories</strong>",
+                  "_override": {
+                    "mobile": {
+                      "textAlign": "center",
+                      "containerPadding": "10px 10px 0px"
+                    }
+                  }
+                }
+              },
+              {
+                "id": "bkpiooW_b9",
+                "type": "text_deprecated",
+                "values": {
+                  "containerPadding": "5px 10px 10px 15px",
+                  "anchor": "",
+                  "color": "#2c2c2c",
+                  "textAlign": "left",
+                  "lineHeight": "140%",
+                  "linkStyle": {
+                    "inherit": true,
+                    "linkColor": "#0000ee",
+                    "linkHoverColor": "#0000ee",
+                    "linkUnderline": true,
+                    "linkHoverUnderline": true
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_text_4",
+                    "htmlClassNames": "u_content_text"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<p style=\"font-size: 14px; line-height: 140%;\">Lorem ipsum dolor sit amet, consec tetur adip iscing elit, sed do eiusmod tempor in cididunt ut labore et dolore.</p>",
+                  "_override": {
+                    "mobile": {
+                      "textAlign": "center",
+                      "containerPadding": "5px 10px 10px"
+                    }
+                  }
+                }
+              },
+              {
+                "id": "dakD5j5Dsf",
+                "type": "button",
+                "values": {
+                  "containerPadding": "10px 10px 25px 15px",
+                  "anchor": "",
+                  "href": {
+                    "name": "web",
+                    "values": {
+                      "href": "https://www.unlayer.com",
+                      "target": "_blank"
+                    },
+                    "attrs": {
+                      "href": "{{href}}",
+                      "target": "{{target}}"
+                    }
+                  },
+                  "buttonColors": {
+                    "color": "#FFFFFF",
+                    "backgroundColor": "#d10406",
+                    "hoverColor": "#FFFFFF",
+                    "hoverBackgroundColor": "#3AAEE0"
+                  },
+                  "size": {
+                    "autoWidth": false,
+                    "width": "55%"
+                  },
+                  "fontSize": "14px",
+                  "textAlign": "left",
+                  "lineHeight": "120%",
+                  "padding": "10px 20px",
+                  "border": {},
+                  "borderRadius": "4px",
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_button_4",
+                    "htmlClassNames": "u_content_button"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<strong><span style=\"font-size: 14px; line-height: 16.8px;\">Shop Now</span></strong>",
+                  "_override": {
+                    "mobile": {
+                      "size": {
+                        "width": "65%",
+                        "autoWidth": false
+                      },
+                      "textAlign": "center",
+                      "containerPadding": "10px 10px 40px 15px"
+                    }
+                  },
+                  "calculatedWidth": 151,
+                  "calculatedHeight": 37
+                }
+              }
+            ],
+            "values": {
+              "_meta": {
+                "htmlID": "u_column_4",
+                "htmlClassNames": "u_column"
+              },
+              "border": {},
+              "padding": "0px",
+              "borderRadius": "0px",
+              "backgroundColor": "#ffffff"
+            }
+          }
+        ],
+        "values": {
+          "displayCondition": null,
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "center"
+          },
+          "padding": "0px",
+          "anchor": "",
+          "hideDesktop": false,
+          "_meta": {
+            "htmlID": "u_row_3",
+            "htmlClassNames": "u_row"
+          },
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true
+        }
+      },
+      {
+        "id": "UH2n81vvvD",
+        "cells": [
+          45.33,
+          54.67
+        ],
+        "columns": [
+          {
+            "id": "0KC9tbLBLa",
+            "contents": [
+              {
+                "id": "uJFXBOzoHl",
+                "type": "image",
+                "values": {
+                  "containerPadding": "5px",
+                  "anchor": "",
+                  "src": {
+                    "url": "https://cdn.templates.unlayer.com/assets/1673813784260-Layer%207.png",
+                    "width": 437,
+                    "height": 529
+                  },
+                  "textAlign": "center",
+                  "altText": "image",
+                  "action": {
+                    "name": "web",
+                    "values": {
+                      "href": "",
+                      "target": "_blank"
+                    }
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_image_11",
+                    "htmlClassNames": "u_content_image"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true
+                }
+              }
+            ],
+            "values": {
+              "_meta": {
+                "htmlID": "u_column_5",
+                "htmlClassNames": "u_column"
+              },
+              "border": {},
+              "padding": "0px",
+              "borderRadius": "0px",
+              "backgroundColor": "#ffffff"
+            }
+          },
+          {
+            "id": "H0cJ2HpvWE",
+            "contents": [
+              {
+                "id": "Ci6sZhjVfH",
+                "type": "image",
+                "values": {
+                  "containerPadding": "5px 5px 30px",
+                  "anchor": "",
+                  "src": {
+                    "url": "https://cdn.templates.unlayer.com/assets/1673813786139-Layer%204.png",
+                    "width": 529,
+                    "height": 529
+                  },
+                  "textAlign": "center",
+                  "altText": "image",
+                  "action": {
+                    "name": "web",
+                    "values": {
+                      "href": "",
+                      "target": "_blank"
+                    }
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_image_3",
+                    "htmlClassNames": "u_content_image"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true
+                }
+              }
+            ],
+            "values": {
+              "_meta": {
+                "htmlID": "u_column_6",
+                "htmlClassNames": "u_column"
+              },
+              "border": {},
+              "padding": "0px",
+              "borderRadius": "0px",
+              "backgroundColor": "#ffffff"
+            }
+          }
+        ],
+        "values": {
+          "displayCondition": null,
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "center"
+          },
+          "padding": "0px",
+          "anchor": "",
+          "hideDesktop": false,
+          "_meta": {
+            "htmlID": "u_row_4",
+            "htmlClassNames": "u_row"
+          },
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true,
+          "_override": {
+            "mobile": {
+              "noStackMobile": true
+            }
+          }
+        }
+      },
+      {
+        "id": "uvz8muv9Zz",
+        "cells": [
+          1
+        ],
+        "columns": [
+          {
+            "id": "EQyEFDgs19",
+            "contents": [
+              {
+                "id": "YxZtrDIoAT",
+                "type": "divider",
+                "values": {
+                  "width": "100%",
+                  "border": {
+                    "borderTopWidth": "2px",
+                    "borderTopStyle": "solid",
+                    "borderTopColor": "#BBBBBB"
+                  },
+                  "textAlign": "center",
+                  "containerPadding": "0px",
+                  "anchor": "",
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_divider_1",
+                    "htmlClassNames": "u_content_divider"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "_override": {
+                    "mobile": {
+                      "containerPadding": "0px 5px 25px"
+                    }
+                  }
+                }
+              }
+            ],
+            "values": {
+              "_meta": {
+                "htmlID": "u_column_9",
+                "htmlClassNames": "u_column"
+              },
+              "border": {},
+              "padding": "5px 0px",
+              "borderRadius": "0px",
+              "backgroundColor": "#ffffff"
+            }
+          }
+        ],
+        "values": {
+          "displayCondition": null,
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "center"
+          },
+          "padding": "0px",
+          "anchor": "",
+          "hideDesktop": false,
+          "_meta": {
+            "htmlID": "u_row_6",
+            "htmlClassNames": "u_row"
+          },
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true
+        }
+      },
+      {
+        "id": "itKRGK5ow8",
+        "cells": [
+          1,
+          1
+        ],
+        "columns": [
+          {
+            "id": "vzulBjzieM",
+            "contents": [
+              {
+                "id": "qInyHYI6RZ",
+                "type": "image",
+                "values": {
+                  "containerPadding": "30px 5px 5px",
+                  "anchor": "",
+                  "src": {
+                    "url": "https://cdn.templates.unlayer.com/assets/1673855747848-afefe.png",
+                    "width": 598,
+                    "height": 747
+                  },
+                  "textAlign": "center",
+                  "altText": "image",
+                  "action": {
+                    "name": "web",
+                    "values": {
+                      "href": "",
+                      "target": "_blank"
+                    }
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_image_12",
+                    "htmlClassNames": "u_content_image"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "_override": {
+                    "mobile": {
+                      "containerPadding": "15px 5px 5px"
+                    }
+                  }
+                }
+              },
+              {
+                "id": "VSg-hv5xp_",
+                "type": "text_deprecated",
+                "values": {
+                  "containerPadding": "50px 10px 10px 15px",
+                  "anchor": "",
+                  "color": "#2c2c2c",
+                  "textAlign": "left",
+                  "lineHeight": "140%",
+                  "linkStyle": {
+                    "inherit": true,
+                    "linkColor": "#0000ee",
+                    "linkHoverColor": "#0000ee",
+                    "linkUnderline": true,
+                    "linkHoverUnderline": true
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_text_1",
+                    "htmlClassNames": "u_content_text"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<p style=\"font-size: 14px; line-height: 140%;\">Lorem ipsum dolor sit amet, consec tetur adip iscing elit, sed do eiusmod tempor in cididunt ut labore et dolore.</p>",
+                  "_override": {
+                    "mobile": {
+                      "containerPadding": "10px 10px 10px 15px"
+                    }
+                  }
+                }
+              },
+              {
+                "id": "PX1wGsqviT",
+                "type": "button",
+                "values": {
+                  "containerPadding": "10px 10px 15px 15px",
+                  "anchor": "",
+                  "href": {
+                    "name": "web",
+                    "values": {
+                      "href": "https://www.unlayer.com",
+                      "target": "_blank"
+                    },
+                    "attrs": {
+                      "href": "{{href}}",
+                      "target": "{{target}}"
+                    }
+                  },
+                  "buttonColors": {
+                    "color": "#FFFFFF",
+                    "backgroundColor": "#d10406",
+                    "hoverColor": "#FFFFFF",
+                    "hoverBackgroundColor": "#3AAEE0"
+                  },
+                  "size": {
+                    "autoWidth": false,
+                    "width": "55%"
+                  },
+                  "fontSize": "14px",
+                  "textAlign": "left",
+                  "lineHeight": "120%",
+                  "padding": "10px 20px",
+                  "border": {},
+                  "borderRadius": "4px",
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_button_1",
+                    "htmlClassNames": "u_content_button"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<strong><span style=\"font-size: 14px; line-height: 16.8px;\">Shop Now</span></strong>",
+                  "_override": {
+                    "mobile": {
+                      "size": {
+                        "width": "100%",
+                        "autoWidth": false
+                      }
+                    }
+                  },
+                  "calculatedWidth": 151,
+                  "calculatedHeight": 37
+                }
+              }
+            ],
+            "values": {
+              "_meta": {
+                "htmlID": "u_column_7",
+                "htmlClassNames": "u_column"
+              },
+              "border": {},
+              "padding": "0px",
+              "borderRadius": "0px",
+              "backgroundColor": "#ffffff"
+            }
+          },
+          {
+            "id": "IRiAmkZkCX",
+            "contents": [
+              {
+                "id": "WjZrkFHQ9u",
+                "type": "heading",
+                "values": {
+                  "containerPadding": "70px 10px 0px",
+                  "anchor": "",
+                  "headingType": "h1",
+                  "fontFamily": {
+                    "url": "https://fonts.googleapis.com/css?family=Montserrat:400,700",
+                    "label": "Montserrat",
+                    "value": "'Montserrat',sans-serif",
+                    "defaultFont": true
+                  },
+                  "fontSize": "30px",
+                  "color": "#d10406",
+                  "textAlign": "left",
+                  "lineHeight": "140%",
+                  "linkStyle": {
+                    "inherit": true,
+                    "linkColor": "#0000ee",
+                    "linkHoverColor": "#0000ee",
+                    "linkUnderline": true,
+                    "linkHoverUnderline": true
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_heading_2",
+                    "htmlClassNames": "u_content_heading"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<strong>Women's<br />Fashion<br />Accessories</strong>",
+                  "_override": {
+                    "mobile": {
+                      "fontSize": "22px",
+                      "containerPadding": "60px 10px 0px"
+                    }
+                  }
+                }
+              },
+              {
+                "id": "hnprPo7aYd",
+                "type": "image",
+                "values": {
+                  "containerPadding": "40px 5px 30px",
+                  "anchor": "",
+                  "src": {
+                    "url": "https://cdn.templates.unlayer.com/assets/1673855752868-daaww.png",
+                    "width": 598,
+                    "height": 748
+                  },
+                  "textAlign": "center",
+                  "altText": "image",
+                  "action": {
+                    "name": "web",
+                    "values": {
+                      "href": "",
+                      "target": "_blank"
+                    }
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_image_4",
+                    "htmlClassNames": "u_content_image"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "_override": {
+                    "mobile": {
+                      "containerPadding": "51px 5px 5px"
+                    }
+                  }
+                }
+              }
+            ],
+            "values": {
+              "_meta": {
+                "htmlID": "u_column_8",
+                "htmlClassNames": "u_column"
+              },
+              "border": {},
+              "padding": "0px",
+              "borderRadius": "0px",
+              "backgroundColor": "#ffffff"
+            }
+          }
+        ],
+        "values": {
+          "displayCondition": null,
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "center"
+          },
+          "padding": "0px",
+          "anchor": "",
+          "hideDesktop": false,
+          "_meta": {
+            "htmlID": "u_row_5",
+            "htmlClassNames": "u_row"
+          },
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true,
+          "_override": {
+            "mobile": {
+              "noStackMobile": true
+            }
+          }
+        }
+      },
+      {
+        "id": "GndctcxwQl",
+        "cells": [
+          1,
+          1,
+          1
+        ],
+        "columns": [
+          {
+            "id": "35vckwWNhM",
+            "contents": [
+              {
+                "id": "VUAI8ExAT6",
+                "type": "image",
+                "values": {
+                  "containerPadding": "60px 10px 13px",
+                  "anchor": "",
+                  "src": {
+                    "url": "https://cdn.templates.unlayer.com/assets/1671693932067-Asset%202.png",
+                    "width": 321,
+                    "height": 146,
+                    "maxWidth": "50%",
+                    "autoWidth": false
+                  },
+                  "textAlign": "center",
+                  "altText": "image",
+                  "action": {
+                    "name": "web",
+                    "values": {
+                      "href": "",
+                      "target": "_blank"
+                    }
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_image_7",
+                    "htmlClassNames": "u_content_image"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "_override": {
+                    "mobile": {
+                      "src": {
+                        "maxWidth": "40%",
+                        "autoWidth": false
+                      },
+                      "containerPadding": "40px 10px 13px"
+                    }
+                  }
+                }
+              },
+              {
+                "id": "deshMLFNa0",
+                "type": "heading",
+                "values": {
+                  "containerPadding": "10px",
+                  "anchor": "",
+                  "headingType": "h1",
+                  "fontFamily": {
+                    "url": "https://fonts.googleapis.com/css?family=Montserrat:400,700",
+                    "label": "Montserrat",
+                    "value": "'Montserrat',sans-serif",
+                    "defaultFont": true
+                  },
+                  "fontSize": "14px",
+                  "color": "#ffffff",
+                  "textAlign": "center",
+                  "lineHeight": "140%",
+                  "linkStyle": {
+                    "inherit": true,
+                    "linkColor": "#0000ee",
+                    "linkHoverColor": "#0000ee",
+                    "linkUnderline": true,
+                    "linkHoverUnderline": true
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_heading_9",
+                    "htmlClassNames": "u_content_heading"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<div>\n<div>\n<div><strong>Free Shipping</strong></div>\n</div>\n</div>"
+                }
+              },
+              {
+                "id": "DVvo1bXE0M",
+                "type": "text_deprecated",
+                "values": {
+                  "containerPadding": "0px 10px 10px",
+                  "anchor": "",
+                  "color": "#ffffff",
+                  "textAlign": "center",
+                  "lineHeight": "140%",
+                  "linkStyle": {
+                    "inherit": true,
+                    "linkColor": "#0000ee",
+                    "linkHoverColor": "#0000ee",
+                    "linkUnderline": true,
+                    "linkHoverUnderline": true
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_text_5",
+                    "htmlClassNames": "u_content_text"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<p style=\"font-size: 14px; line-height: 140%;\">This is a new Text block.</p>\n<p style=\"font-size: 14px; line-height: 140%;\">Change the text.</p>",
+                  "_override": {
+                    "mobile": {
+                      "containerPadding": "0px 10px 40px"
+                    }
+                  }
+                }
+              }
+            ],
+            "values": {
+              "_meta": {
+                "htmlID": "u_column_10",
+                "htmlClassNames": "u_column"
+              },
+              "border": {},
+              "padding": "0px",
+              "_override": {
+                "mobile": {
+                  "backgroundColor": "#8110ad"
+                }
+              },
+              "borderRadius": "0px",
+              "backgroundColor": "#d10406"
+            }
+          },
+          {
+            "id": "sMKAZ97Ejx",
+            "contents": [
+              {
+                "id": "OSTUY2St-f",
+                "type": "image",
+                "values": {
+                  "containerPadding": "60px 10px 9px",
+                  "anchor": "",
+                  "src": {
+                    "url": "https://cdn.templates.unlayer.com/assets/1665749053077-noun-online-support-4458374%20copy.png",
+                    "width": 320,
+                    "height": 264,
+                    "maxWidth": "30%",
+                    "autoWidth": false
+                  },
+                  "textAlign": "center",
+                  "altText": "image",
+                  "action": {
+                    "name": "web",
+                    "values": {
+                      "href": "",
+                      "target": "_blank"
+                    }
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_image_8",
+                    "htmlClassNames": "u_content_image"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "_override": {
+                    "mobile": {
+                      "src": {
+                        "maxWidth": "30%",
+                        "autoWidth": false
+                      },
+                      "containerPadding": "40px 10px 9px"
+                    }
+                  }
+                }
+              },
+              {
+                "id": "aH2CLbBlgb",
+                "type": "heading",
+                "values": {
+                  "containerPadding": "10px",
+                  "anchor": "",
+                  "headingType": "h1",
+                  "fontFamily": {
+                    "url": "https://fonts.googleapis.com/css?family=Montserrat:400,700",
+                    "label": "Montserrat",
+                    "value": "'Montserrat',sans-serif",
+                    "defaultFont": true
+                  },
+                  "fontSize": "14px",
+                  "color": "#ffffff",
+                  "textAlign": "center",
+                  "lineHeight": "140%",
+                  "linkStyle": {
+                    "inherit": true,
+                    "linkColor": "#0000ee",
+                    "linkHoverColor": "#0000ee",
+                    "linkUnderline": true,
+                    "linkHoverUnderline": true
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_heading_10",
+                    "htmlClassNames": "u_content_heading"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<div>\n<div>\n<div>\n<div><strong>Online Support</strong></div>\n</div>\n</div>\n</div>"
+                }
+              },
+              {
+                "id": "AU4qT5mvQK",
+                "type": "text_deprecated",
+                "values": {
+                  "containerPadding": "0px 10px 10px",
+                  "anchor": "",
+                  "color": "#ffffff",
+                  "textAlign": "center",
+                  "lineHeight": "140%",
+                  "linkStyle": {
+                    "inherit": true,
+                    "linkColor": "#0000ee",
+                    "linkHoverColor": "#0000ee",
+                    "linkUnderline": true,
+                    "linkHoverUnderline": true
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_text_6",
+                    "htmlClassNames": "u_content_text"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<p style=\"font-size: 14px; line-height: 140%;\">This is a new Text block.</p>\n<p style=\"font-size: 14px; line-height: 140%;\">Change the text.</p>",
+                  "_override": {
+                    "mobile": {
+                      "containerPadding": "0px 10px 40px"
+                    }
+                  }
+                }
+              }
+            ],
+            "values": {
+              "_meta": {
+                "htmlID": "u_column_11",
+                "htmlClassNames": "u_column"
+              },
+              "border": {},
+              "padding": "0px",
+              "_override": {
+                "mobile": {
+                  "backgroundColor": "#6f089c"
+                }
+              },
+              "borderRadius": "0px",
+              "backgroundColor": "#d10406"
+            }
+          },
+          {
+            "id": "CYOJOReDav",
+            "contents": [
+              {
+                "id": "BJw6CBztAL",
+                "type": "image",
+                "values": {
+                  "containerPadding": "57px 10px 10px",
+                  "anchor": "",
+                  "src": {
+                    "url": "https://cdn.templates.unlayer.com/assets/1671693934427-Asset%201.png",
+                    "width": 321,
+                    "height": 271,
+                    "maxWidth": "31%",
+                    "autoWidth": false
+                  },
+                  "textAlign": "center",
+                  "altText": "image",
+                  "action": {
+                    "name": "web",
+                    "values": {
+                      "href": "",
+                      "target": "_blank"
+                    }
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_image_9",
+                    "htmlClassNames": "u_content_image"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "_override": {
+                    "mobile": {
+                      "src": {
+                        "maxWidth": "33%",
+                        "autoWidth": false
+                      },
+                      "containerPadding": "40px 10px 10px"
+                    }
+                  }
+                }
+              },
+              {
+                "id": "mHprl7E-Jq",
+                "type": "heading",
+                "values": {
+                  "containerPadding": "10px",
+                  "anchor": "",
+                  "headingType": "h1",
+                  "fontFamily": {
+                    "url": "https://fonts.googleapis.com/css?family=Montserrat:400,700",
+                    "label": "Montserrat",
+                    "value": "'Montserrat',sans-serif",
+                    "defaultFont": true
+                  },
+                  "fontSize": "14px",
+                  "color": "#ffffff",
+                  "textAlign": "center",
+                  "lineHeight": "140%",
+                  "linkStyle": {
+                    "inherit": true,
+                    "linkColor": "#0000ee",
+                    "linkHoverColor": "#0000ee",
+                    "linkUnderline": true,
+                    "linkHoverUnderline": true
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_heading_11",
+                    "htmlClassNames": "u_content_heading"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<div>\n<div><strong>Money back guarantee</strong></div>\n</div>"
+                }
+              },
+              {
+                "id": "TwLXtYySp4",
+                "type": "text_deprecated",
+                "values": {
+                  "containerPadding": "0px 10px 60px",
+                  "anchor": "",
+                  "color": "#ffffff",
+                  "textAlign": "center",
+                  "lineHeight": "140%",
+                  "linkStyle": {
+                    "inherit": true,
+                    "linkColor": "#0000ee",
+                    "linkHoverColor": "#0000ee",
+                    "linkUnderline": true,
+                    "linkHoverUnderline": true
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_text_7",
+                    "htmlClassNames": "u_content_text"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<p style=\"font-size: 14px; line-height: 140%;\">This is a new Text block.</p>\n<p style=\"font-size: 14px; line-height: 140%;\">Change the text.</p>",
+                  "_override": {
+                    "mobile": {
+                      "containerPadding": "0px 10px 40px"
+                    }
+                  }
+                }
+              }
+            ],
+            "values": {
+              "_meta": {
+                "htmlID": "u_column_12",
+                "htmlClassNames": "u_column"
+              },
+              "border": {},
+              "padding": "0px",
+              "_override": {
+                "mobile": {
+                  "backgroundColor": "#8110ad"
+                }
+              },
+              "borderRadius": "0px",
+              "backgroundColor": "#d10406"
+            }
+          }
+        ],
+        "values": {
+          "displayCondition": null,
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "top-center",
+            "customPosition": [
+              "50%",
+              "0%"
+            ]
+          },
+          "padding": "0px",
+          "anchor": "",
+          "hideDesktop": false,
+          "_meta": {
+            "htmlID": "u_row_7",
+            "htmlClassNames": "u_row"
+          },
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true,
+          "_override": {
+            "mobile": {
+              "noStackMobile": false
+            }
+          }
+        }
+      },
+      {
+        "id": "evrdHhlEau",
+        "cells": [
+          1
+        ],
+        "columns": [
+          {
+            "id": "FylPZ6a56H",
+            "contents": [
+              {
+                "id": "9bEeDRgIWi",
+                "type": "social",
+                "values": {
+                  "containerPadding": "60px 10px 10px",
+                  "anchor": "",
+                  "icons": {
+                    "iconType": "rounded",
+                    "icons": [
+                      {
+                        "url": "https://www.facebook.com/unlayer",
+                        "name": "Facebook"
+                      },
+                      {
+                        "url": "https://twitter.com/unlayerapp",
+                        "name": "Twitter"
+                      },
+                      {
+                        "url": "https://www.linkedin.com/company/unlayer/mycompany/",
+                        "name": "LinkedIn"
+                      },
+                      {
+                        "url": "https://www.instagram.com/unlayer_official/",
+                        "name": "Instagram"
+                      }
+                    ],
+                    "editor": {
+                      "data": {
+                        "showDefaultIcons": true,
+                        "showDefaultOptions": true,
+                        "customIcons": [],
+                        "customOptions": []
+                      }
+                    }
+                  },
+                  "align": "center",
+                  "spacing": 10,
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_social_1",
+                    "htmlClassNames": "u_content_social"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "_override": {
+                    "mobile": {
+                      "containerPadding": "40px 10px 10px"
+                    }
+                  }
+                }
+              },
+              {
+                "id": "OkWBGQdAZW",
+                "type": "text_deprecated",
+                "values": {
+                  "containerPadding": "10px 100px 60px",
+                  "anchor": "",
+                  "textAlign": "center",
+                  "lineHeight": "170%",
+                  "linkStyle": {
+                    "inherit": true,
+                    "linkColor": "#0000ee",
+                    "linkHoverColor": "#0000ee",
+                    "linkUnderline": true,
+                    "linkHoverUnderline": true
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_text_8",
+                    "htmlClassNames": "u_content_text"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "text": "<p style=\"font-size: 14px; line-height: 170%;\">UNSUBSCRIBE   |   PRIVACY POLICY   |   WEB</p>\n<p style=\"font-size: 14px; line-height: 170%;\"> </p>\n<p style=\"font-size: 14px; line-height: 170%;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>",
+                  "_override": {
+                    "mobile": {
+                      "containerPadding": "10px 10px 40px"
+                    }
+                  }
+                }
+              }
+            ],
+            "values": {
+              "_meta": {
+                "htmlID": "u_column_13",
+                "htmlClassNames": "u_column"
+              },
+              "border": {},
+              "padding": "0px",
+              "borderRadius": "0px",
+              "backgroundColor": ""
+            }
+          }
+        ],
+        "values": {
+          "displayCondition": null,
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "top-center",
+            "customPosition": [
+              "50%",
+              "0%"
+            ]
+          },
+          "padding": "0px",
+          "anchor": "",
+          "hideDesktop": false,
+          "_meta": {
+            "htmlID": "u_row_8",
+            "htmlClassNames": "u_row"
+          },
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true
+        }
+      },
+      {
+        "id": "6EZp2giHtQ",
+        "cells": [
+          1
+        ],
+        "columns": [
+          {
+            "id": "Vh3gJozWt4",
+            "contents": [
+              {
+                "id": "eazBY4vGnz",
+                "type": "image",
+                "values": {
+                  "containerPadding": "20px 10px",
+                  "anchor": "",
+                  "src": {
+                    "url": "https://cdn.templates.unlayer.com/assets/1668151418984-Logo.png",
+                    "width": 149,
+                    "height": 31
+                  },
+                  "textAlign": "center",
+                  "altText": "image",
+                  "action": {
+                    "name": "web",
+                    "values": {
+                      "href": "",
+                      "target": "_blank"
+                    }
+                  },
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_image_10",
+                    "htmlClassNames": "u_content_image"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true
+                }
+              }
+            ],
+            "values": {
+              "_meta": {
+                "htmlID": "u_column_14",
+                "htmlClassNames": "u_column"
+              },
+              "border": {},
+              "padding": "0px",
+              "borderRadius": "0px",
+              "backgroundColor": ""
+            }
+          }
+        ],
+        "values": {
+          "displayCondition": null,
+          "columns": false,
+          "backgroundColor": "#ecf0f1",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "top-center",
+            "customPosition": [
+              "50%",
+              "0%"
+            ]
+          },
+          "padding": "0px",
+          "anchor": "",
+          "hideDesktop": false,
+          "_meta": {
+            "htmlID": "u_row_9",
+            "htmlClassNames": "u_row"
+          },
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true
+        }
+      }
+    ],
+    "values": {
+      "popupPosition": "center",
+      "popupWidth": "600px",
+      "popupHeight": "auto",
+      "borderRadius": "10px",
+      "contentAlign": "center",
+      "contentVerticalAlign": "center",
+      "contentWidth": 600,
+      "fontFamily": {
+        "label": "Open Sans",
+        "value": "'Open Sans',sans-serif",
+        "url": "https://fonts.googleapis.com/css?family=Open+Sans:400,700",
+        "defaultFont": true
+      },
+      "textColor": "#000000",
+      "popupBackgroundColor": "#FFFFFF",
+      "popupBackgroundImage": {
+        "url": "",
+        "fullWidth": true,
+        "repeat": "no-repeat",
+        "size": "cover",
+        "position": "center"
+      },
+      "popupOverlay_backgroundColor": "rgba(0, 0, 0, 0.1)",
+      "popupCloseButton_position": "top-right",
+      "popupCloseButton_backgroundColor": "#DDDDDD",
+      "popupCloseButton_iconColor": "#000000",
+      "popupCloseButton_borderRadius": "0px",
+      "popupCloseButton_margin": "0px",
+      "popupCloseButton_action": {
+        "name": "close_popup",
+        "attrs": {
+          "onClick": "document.querySelector('.u-popup-container').style.display = 'none';"
+        }
+      },
+      "backgroundColor": "#f8f8f8",
+      "backgroundImage": {
+        "url": "",
+        "fullWidth": true,
+        "repeat": "no-repeat",
+        "size": "custom",
+        "position": "center"
+      },
+      "preheaderText": "",
+      "linkStyle": {
+        "body": true,
+        "linkColor": "#0000ee",
+        "linkHoverColor": "#0000ee",
+        "linkUnderline": true,
+        "linkHoverUnderline": true
+      },
+      "_meta": {
+        "htmlID": "u_body",
+        "htmlClassNames": "u_body"
+      }
+    }
+  },
+  "schemaVersion": 12
+}

@@ -83,6 +83,11 @@ function App() {
       route: '/onboarding',
       description: 'multi step form',
     },
+    {
+      title: 'SocketDisplay',
+      route: '/socketdisplay',
+      description: 'socket displaying',
+    },
   ];
 
   const checkWinWidth = () => {
@@ -101,7 +106,7 @@ function App() {
     };
   }, []);
   return (
-    <div className='h-screen relative dark:bg-gray-700 bg-gray-100'>
+    <div className='min-h-screen h-full relative dark:bg-gray-700 bg-gray-100 overflow-x-hidden'>
       <div className='pb-32 items-center flex w-full'>
         <FaBars
           onClick={() => setModalShow(!modalShow)}
@@ -111,14 +116,14 @@ function App() {
 
         <button
           onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')}
-          className='custom-btn-bg flex-row-reverse float-right m-2'
+          className='custom-btn-bg flex-row-reverse float-right m-2 mr-8'
         >
           {colorMode === 'light' ? <FaSun /> : <FaMoon />}
         </button>
       </div>
 
       <div
-        className='h-[calc(100vh-12rem)] flex min-w-[calc(100vw-8rem)] transition-all duration-500 w-screen'
+        className='h-full min-h-[calc(100vh-12rem)] flex min-w-[calc(100vw-8rem)] transition-all duration-500 w-screen'
         aria-label='Sidebar'
       >
         {modalShow ? (
@@ -140,7 +145,7 @@ function App() {
           </div>
         ) : null}
         {window.innerWidth >= breakPoint ? <div className='p-4'></div> : null}
-        <div id='content' className='w-full px-4'>
+        <div id='content' className='w-full px-8 mb-8'>
           {location.pathname === '/' ? <Home /> : <Outlet />}
         </div>
       </div>

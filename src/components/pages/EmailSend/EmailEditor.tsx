@@ -1,11 +1,11 @@
 import EmailEditor from 'react-email-editor';
-// import template from "./design001.json";
-import custom from './custom.js';
 
-const Editor = ({ emailEditorRef, setSaved, messageText }: any) => {
-  const onLoad = () => {
-    console.log('loading...');
-    // emailEditorRef.current.editor.loadDesign(template);
+import onBoardTemp from './templates/onboardMail.json';
+import newYearTemp from './templates/newYearSale.json';
+import absenceTemp from './templates/absence.json';
+
+const Editor = ({ template, emailEditorRef, setSaved, messageText }: any) => {
+  const getFromStorage = () => {
     const template = localStorage.getItem('design');
     if (template && emailEditorRef.current)
       emailEditorRef.current.editor.loadDesign(JSON.parse(template));
@@ -15,6 +15,38 @@ const Editor = ({ emailEditorRef, setSaved, messageText }: any) => {
         setSaved(false);
       }
     );
+  };
+
+  const getFromJson = () => {
+    const templates = [
+      {
+        title: 'new-year-sale',
+        jsonTemp: newYearTemp,
+      },
+      {
+        title: 'onboard',
+        jsonTemp: onBoardTemp,
+      },
+      {
+        title: 'absence',
+        jsonTemp: absenceTemp,
+      },
+    ];
+    const tempId = templates.findIndex((el) => el.title === template);
+    if (template && emailEditorRef.current)
+      emailEditorRef.current.editor.loadDesign(templates[tempId].jsonTemp);
+    emailEditorRef.current?.editor.addEventListener(
+      'design:updated',
+      function () {
+        setSaved(false);
+      }
+    );
+  };
+
+  const onLoad = () => {
+    console.log('loading...');
+    getFromJson();
+    // getFromStorage();
   };
 
   const dummyMessage = `sad
@@ -46,7 +78,12 @@ const Editor = ({ emailEditorRef, setSaved, messageText }: any) => {
       // enabled: false,
       properties: {
         text: {
-          value: dummyMessage,
+          value:
+            '<span style="margin: 0px; line-height: 0px;">This is a new Text block. Change the text.</span>',
+          // value: 'shemay',
+        },
+        lineHeight: {
+          value: '100%',
         },
       },
     },
@@ -65,7 +102,8 @@ const Editor = ({ emailEditorRef, setSaved, messageText }: any) => {
         options={options}
         onLoad={onLoad}
         onReady={onReady}
-        // tools={tools}
+        tools={tools}
+        // style={{ margin: '0px' }}
       />
       <button className='btn' onClick={getMsgBody}>
         Msg body

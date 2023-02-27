@@ -1,0 +1,217 @@
+{
+  "counters": {
+    "u_column": 10,
+    "u_row": 6,
+    "u_content_text": 5,
+    "u_content_button": 2,
+    "u_content_html": 6,
+    "u_content_image": 2,
+    "u_content_menu": 1
+  },
+  "body": {
+    "id": "hZ5CMZyDlR",
+    "rows": [
+      {
+        "id": "LsKEPeSomH",
+        "cells": [
+          1,
+          1,
+          1
+        ],
+        "columns": [
+          {
+            "id": "I65ZAxcmD6",
+            "contents": [],
+            "values": {
+              "backgroundColor": "",
+              "padding": "0px",
+              "border": {},
+              "borderRadius": "0px",
+              "_meta": {
+                "htmlID": "u_column_3",
+                "htmlClassNames": "u_column"
+              }
+            }
+          },
+          {
+            "id": "iZIeO5GSfP",
+            "contents": [],
+            "values": {
+              "backgroundColor": "",
+              "padding": "0px",
+              "border": {},
+              "borderRadius": "0px",
+              "_meta": {
+                "htmlID": "u_column_4",
+                "htmlClassNames": "u_column"
+              }
+            }
+          },
+          {
+            "id": "qibYgQu3C5",
+            "contents": [],
+            "values": {
+              "backgroundColor": "",
+              "padding": "0px",
+              "border": {},
+              "borderRadius": "0px",
+              "_meta": {
+                "htmlID": "u_column_5",
+                "htmlClassNames": "u_column"
+              }
+            }
+          }
+        ],
+        "values": {
+          "displayCondition": null,
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "center"
+          },
+          "padding": "0px",
+          "anchor": "",
+          "hideDesktop": false,
+          "_meta": {
+            "htmlID": "u_row_3",
+            "htmlClassNames": "u_row"
+          },
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true
+        }
+      },
+      {
+        "id": "GPwyCTESkp",
+        "cells": [
+          1
+        ],
+        "columns": [
+          {
+            "id": "8JvNcBG0KP",
+            "contents": [
+              {
+                "id": "u0iA_AaRWb",
+                "type": "html",
+                "values": {
+                  "html": "<div>\n      <table style=\"\n      background-color: #FFF3F3; max-width: 670px; margin: 0 auto\" width=\"100%\" border=\"0\"\n            align=\"center\" cellpadding=\"0\" cellspacing=\"0\">\n            <tr>\n              <td>\n                <table width=\"100%\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" style=\"\n                      max-width: 670px;\n                      background: #FEFEFF;\n                      text-align: center;\n                      border: solid 3px #EFEFEA;\n                      border-radius: 10px;\n                    \">\n                    <tr>\n              <td \n              style=\"text-align: left; \n                background: #32498D; \n                  color: #fff;\n                  padding-left:35px\">\n                <h2>App name</h2>\n              </td>\n            </tr>\n                  <tr>\n                    <td style=\"height: 40px\">&nbsp;</td>\n                  </tr>\n                  <tr>\n                    <td style=\"padding: 0 35px\">\n                      <h1 style=\"\n                            color: ${theme.mainText};\n                            font-weight: 600;\n                            margin: 0;\n                            font-size: 32px;\n                            font-family: 'Rubik', sans-serif;\n                          \">\n                        Subject title\n                      </h1>\n            <br style=\"margin-top: 10px\" />\n                      <p style=\"\n                            color: #202124;\n                            font-size: 15px;\n                            line-height: 24px;\n                            margin: 0;\n                            text-align: left;\n                          \">[[message_txt]]\n                        \n                      </p>\n                      <br />\n                    </td>\n                  </tr>\n                  \n                  <tr>\n                    <td style=\"height: 40px\">&nbsp;</td>\n                  </tr>\n                  \n                </table>\n              </td>\n            </tr>\n            \n          </table>\n          <div>\n          <p style=\"\n            font-size: 14px;\n            text-align: center;\n            color: black;\">\n          &copy; 2022 Super app. All rights reserved. \n          </p>\n          </div>\n    </div>",
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "containerPadding": "10px",
+                  "anchor": "",
+                  "_meta": {
+                    "htmlID": "u_content_html_6",
+                    "htmlClassNames": "u_content_html"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true
+                }
+              }
+            ],
+            "values": {
+              "backgroundColor": "",
+              "padding": "0px",
+              "border": {},
+              "borderRadius": "0px",
+              "_meta": {
+                "htmlID": "u_column_10",
+                "htmlClassNames": "u_column"
+              }
+            }
+          }
+        ],
+        "values": {
+          "displayCondition": null,
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": "no-repeat",
+            "size": "custom",
+            "position": "center"
+          },
+          "padding": "0px",
+          "anchor": "",
+          "hideDesktop": false,
+          "_meta": {
+            "htmlID": "u_row_6",
+            "htmlClassNames": "u_row"
+          },
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true
+        }
+      }
+    ],
+    "values": {
+      "popupPosition": "center",
+      "popupWidth": "600px",
+      "popupHeight": "auto",
+      "borderRadius": "10px",
+      "contentAlign": "center",
+      "contentVerticalAlign": "center",
+      "contentWidth": 900,
+      "fontFamily": {
+        "label": "Arial",
+        "value": "arial,helvetica,sans-serif"
+      },
+      "fontWeight": 400,
+      "textColor": "#000000",
+      "popupBackgroundColor": "#FFFFFF",
+      "popupBackgroundImage": {
+        "url": "",
+        "fullWidth": true,
+        "repeat": "no-repeat",
+        "size": "cover",
+        "position": "center"
+      },
+      "popupOverlay_backgroundColor": "rgba(0, 0, 0, 0.1)",
+      "popupCloseButton_position": "top-right",
+      "popupCloseButton_backgroundColor": "#DDDDDD",
+      "popupCloseButton_iconColor": "#000000",
+      "popupCloseButton_borderRadius": "0px",
+      "popupCloseButton_margin": "0px",
+      "popupCloseButton_action": {
+        "name": "close_popup",
+        "attrs": {
+          "onClick": "document.querySelector('.u-popup-container').style.display = 'none';"
+        }
+      },
+      "backgroundColor": "#fdfdfd",
+      "backgroundImage": {
+        "url": "",
+        "fullWidth": true,
+        "repeat": "no-repeat",
+        "size": "custom",
+        "position": "center"
+      },
+      "preheaderText": "",
+      "linkStyle": {
+        "body": true,
+        "linkColor": "#0000ee",
+        "linkHoverColor": "#0000ee",
+        "linkUnderline": true,
+        "linkHoverUnderline": true
+      },
+      "_meta": {
+        "htmlID": "u_body",
+        "htmlClassNames": "u_body"
+      }
+    }
+  },
+  "schemaVersion": 12
+}

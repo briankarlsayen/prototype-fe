@@ -13,8 +13,6 @@ interface ExportProps {
   html: string;
 }
 
-// TODO make container with email message
-// TODO save multiple templates, save in json file
 // TODO validate if email is valid
 // TODO send email to multiple users
 const EmailSend = () => {
@@ -25,6 +23,13 @@ const EmailSend = () => {
   const [isSaved, setSaved] = useState(false);
   const [messageText, setMessageText] = useState('');
   const [showResult, setShowResult] = useState(false);
+  const [template, setTemplate] = useState('new-year-sale');
+
+  const templates = [
+    { title: 'New Year Sale', val: 'new-year-sale' },
+    { title: 'Onboarding', val: 'onboard' },
+    { title: 'Absence', val: 'absence' },
+  ];
 
   const emailEditorRef = useRef<any>(null);
 
@@ -83,8 +88,10 @@ const EmailSend = () => {
   };
 
   const htmlSendMsg = async (message: string) => {
+    // console.log('value', value);
+    const emailArr = value.map((el) => el.value);
     const encodeMsg = btoa(message);
-    await axios.post('/sendmsg', { html: encodeMsg });
+    await axios.post('/email/sendmsg', { html: encodeMsg, emails: emailArr });
   };
 
   const saveJsonFile = (jsonData: any, filename: string) => {
@@ -107,7 +114,6 @@ const EmailSend = () => {
         setSaved(true);
       }
     );
-    // console.log("design", design);
   };
 
   return (
@@ -142,11 +148,6 @@ const EmailSend = () => {
             <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300'>
               Message
             </label>
-            {/* <input
-            type="text"
-            placeholder="message"
-            className="input input-bordered w-full max-w-xs"
-          /> */}
             <textarea
               className='textarea textarea-bordered'
               placeholder='message'
@@ -158,10 +159,16 @@ const EmailSend = () => {
             <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300'>
               Design
             </label>
-            <select className='select select-bordered outline-none w-full'>
-              <option>basic</option>
-              <option>business</option>
-              <option>casual</option>
+            <select
+              name='template'
+              className='select select-bordered outline-none w-full'
+              onChange={(e) => setTemplate(e.target.value)}
+            >
+              {templates.map((opt, idx) => (
+                <option key={idx} value={opt.val}>
+                  {opt.title}
+                </option>
+              ))}
             </select>
           </div>
           <button
@@ -189,6 +196,7 @@ const EmailSend = () => {
               exportHtml={exportHtml}
               setSaved={setSaved}
               messageText={messageText}
+              template={template}
             />
             <div className='flex flex-row-reverse'>
               {isSaved ? (

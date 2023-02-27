@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import TextareaAutosize from "react-textarea-autosize";
-import axios from "../../../api/axios";
+import { useEffect, useState } from 'react';
+import TextareaAutosize from 'react-textarea-autosize';
+import axios from '../../../api/axios';
 
 function Paraphraser() {
-  const [inputText, setInputText] = useState("");
-  const [resultText, setResultText] = useState("");
+  const [inputText, setInputText] = useState('');
+  const [resultText, setResultText] = useState('');
   const [clicked, setClicked] = useState(false);
   const [timerCount, setTimerCount] = useState(3);
   const [timer, setTimer] = useState(false);
@@ -13,7 +13,7 @@ function Paraphraser() {
   // TODO put every text in array every second
   const handleSend = async () => {
     setClicked(true);
-    const response = await axios.post("/rephrase", { prompt: inputText });
+    const response = await axios.post('/email/rephrase', { prompt: inputText });
     setTimer(true);
 
     let resultArr = [];
@@ -28,7 +28,7 @@ function Paraphraser() {
     if (timerCount > 0 && timer) {
       const intervalId = setInterval(() => {
         const newCount = timerCount - 1;
-        console.log("newCount", newCount);
+        console.log('newCount', newCount);
         setTimerCount(timerCount - 1);
       }, 1000);
       return () => {
@@ -37,32 +37,32 @@ function Paraphraser() {
     }
   }, [timer, timerCount]);
   return (
-    <div className="paraphrase-container">
-      <div className="flex flex-col m-auto justify-center align-middle items-center max-w-[50rem] md:max-w-full w-full">
-        <h1 className="text-3xl py-4">Text paraphraser</h1>
-        <div className="max-w-[95vw] md:max-w-[50rem] w-full">
+    <div className='paraphrase-container'>
+      <div className='flex flex-col m-auto justify-center align-middle items-center max-w-[50rem] md:max-w-full w-full'>
+        <h1 className='text-3xl py-4'>Text paraphraser</h1>
+        <div className='max-w-[95vw] md:max-w-[50rem] w-full'>
           <TextareaAutosize
-            className="input-container rounded-md w-full p-4 outline-none text-black dark:text-gray-300"
+            className='input-container rounded-md w-full p-4 outline-none text-black dark:text-gray-300'
             autoFocus
             minRows={6}
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
           />
           {clicked ? (
-            <button className="custom-btn-bg flex-row-reverse float-right">
+            <button className='custom-btn-bg flex-row-reverse float-right'>
               Send
             </button>
           ) : (
             <button
               onClick={handleSend}
-              className="custom-btn-bg flex-row-reverse float-right"
+              className='custom-btn-bg flex-row-reverse float-right'
             >
               Send
             </button>
           )}
         </div>
-        {resultText ? <p className="pt-4 text-xl">Result</p> : null}
-        <p className="pt-4 max-w-[95vw] md:max-w-[50rem] w-full">
+        {resultText ? <p className='pt-4 text-xl'>Result</p> : null}
+        <p className='pt-4 max-w-[95vw] md:max-w-[50rem] w-full'>
           {resultText}
         </p>
       </div>
