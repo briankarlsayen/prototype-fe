@@ -17,7 +17,9 @@ interface SocketSettings {
 }
 
 const SocketDisplay = () => {
-  const [datas, setDatas] = useState([]);
+  const [datas, setDatas] = useState<Array<{ key: 'string'; value: 'string' }>>(
+    []
+  );
   const [online, setOnline] = useState(false);
   const [useSocket, setUseSocket] = useState<SocketConnect>();
   const [inputText, setInputText] = useState<SocketSettings>({
@@ -28,7 +30,6 @@ const SocketDisplay = () => {
   const [socketErr, setSocketErr] = useState(false);
   const [spinAction, setSpinAction] = useState(false);
   const [callback, setCallback] = useState(false);
-  const [clickCount, setClickCount] = useState(0);
 
   const updateField = (e: any) => {
     setInputText({
@@ -55,7 +56,7 @@ const SocketDisplay = () => {
       console.log('online...');
       getActiveOrders();
     }
-  }, [online, datas]);
+  }, [online]);
 
   const delay = (delayInms: number) => {
     return new Promise((resolve) => setTimeout(resolve, delayInms));
@@ -94,18 +95,9 @@ const SocketDisplay = () => {
     await useSocket?.data?.on(
       socketCon ? socketCon.room : '',
       async (data: any) => {
-        console.log('datas', datas);
-        let newClickCount = clickCount + 1;
-        setClickCount(newClickCount);
         if (data) {
-          let dataArr: any = datas;
-          console.log('dataArr1', dataArr);
-
-          // const newDataArr = datas.length ? dataArr :  [data];
-          dataArr.push(data);
-          return setDatas(dataArr);
+          return setDatas((prevArr) => [data, ...(prevArr ?? [])]);
         }
-        return console.log('data', data);
       }
     );
   };
@@ -118,12 +110,12 @@ const SocketDisplay = () => {
     );
   };
 
-  console.log('datas1 ', datas);
-
   const displaySocketRes = () => {
-    console.log('displaaying...');
-    console.log('datas.length', datas.length);
-    return <ul className='text-white'>{datas.length}</ul>;
+    return (
+      <ul className='text-white text-sm'>
+        <pre>{datas.length ? `${JSON.stringify(datas, null, 2)},` : ''}</pre>
+      </ul>
+    );
   };
 
   return (
@@ -177,8 +169,7 @@ const SocketDisplay = () => {
           {connectionBadge()}
         </div>
         <hr className='mb-4' />
-        {/* {displaySocketRes()} */}
-        <ul className='text-white'>{clickCount}</ul>
+        {displaySocketRes()}
       </div>
     </div>
   );
