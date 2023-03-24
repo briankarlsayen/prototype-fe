@@ -88,6 +88,11 @@ function App() {
       route: '/socketdisplay',
       description: 'socket displaying',
     },
+    {
+      title: 'Encryption',
+      route: '/encryption',
+      description: 'encryption of text',
+    },
   ];
 
   const checkWinWidth = () => {

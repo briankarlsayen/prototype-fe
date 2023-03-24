@@ -12,6 +12,7 @@ import EmailPromo from './components/pages/EmailPromo';
 import EmailSend from './components/pages/EmailSend';
 import Onboarding from './components/pages/Onboarding';
 import SocketDisplay from './components/pages/SocketDisplay';
+import Encryption from './components/pages/Encryption';
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: '/socketdisplay',
         element: <SocketDisplay />,
+      },
+      {
+        path: '/encryption',
+        element: <Encryption />,
       },
     ],
   },
