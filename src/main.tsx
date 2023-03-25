@@ -1,62 +1,64 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import "./index.css";
-import Paraphraser from "./components/pages/Paraphraser";
-import Reminder from "./components/pages/Reminder";
-import NotFound from "./components/pages/NotFound";
-import Shawtawt from "./components/pages/Shawtawt";
-import EmailPromo from "./components/pages/EmailPromo";
-import EmailSend from "./components/pages/EmailSend";
-import Onboarding from "./components/pages/Onboarding";
-import SocketDisplay from "./components/pages/SocketDisplay";
-import Encryption from "./components/pages/Encryption";
+import './index.css';
+import Paraphraser from './components/pages/Paraphraser';
+import Reminder from './components/pages/Reminder';
+import NotFound from './components/pages/NotFound';
+import Shawtawt from './components/pages/Shawtawt';
+import EmailPromo from './components/pages/EmailPromo';
+import EmailSend from './components/pages/EmailSend';
+import Onboarding from './components/pages/Onboarding';
+import SocketDisplay from './components/pages/SocketDisplay';
+import Encryption from './components/pages/Encryption';
 
+// * openai-api-key has expired
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
     errorElement: <NotFound />,
     children: [
+      // {
+      //   path: '/paraphrase',
+      //   element: <Paraphraser />,
+      // },
+
+      // {
+      //   path: '/emailpromo',
+      //   element: <EmailPromo />,
+      // },
+      // {
+      //   path: '/emailsend',
+      //   element: <EmailSend />,
+      // },
       {
-        path: "/paraphrase",
-        element: <Paraphraser />,
-      },
-      {
-        path: "/shawtawt",
+        path: '/shawtawt',
         element: <Shawtawt />,
       },
       {
-        path: "/emailpromo",
-        element: <EmailPromo />,
-      },
-      {
-        path: "/emailsend",
-        element: <EmailSend />,
-      },
-      {
-        path: "/reminders",
+        path: '/reminders',
         element: <Reminder />,
       },
       {
-        path: "/onboarding",
+        path: '/onboarding',
         element: <Onboarding />,
       },
       {
-        path: "/socketdisplay",
+        path: '/socketdisplay',
         element: <SocketDisplay />,
       },
       {
-        path: "/encryption",
+        path: '/encryption',
         element: <Encryption />,
       },
     ],
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     {/* <App /> */}
     <RouterProvider router={router} />
