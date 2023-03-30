@@ -52,12 +52,24 @@ function App() {
   const [modalShow, setModalShow] = useState(false);
   const [colorMode, setColorMode] = useColorMode();
   let location = useLocation();
+
+  // * openai-api-key has expired
   const sideBarItems: SidebarProps[] = [
-    {
-      title: 'Paraphraser',
-      route: '/paraphrase',
-      description: 'rephrase paragraph using ai',
-    },
+    // {
+    //   title: "Paraphraser",
+    //   route: "/paraphrase",
+    //   description: "rephrase paragraph using ai",
+    // },
+    // {
+    //   title: "EmailPromo",
+    //   route: "/emailpromo",
+    //   description: "create an email message with given settings using ai",
+    // },
+    // {
+    //   title: "EmailSend",
+    //   route: "/emailsend",
+    //   description: "verify email address and send email",
+    // },
     {
       title: 'Reminder',
       route: '/reminders',
@@ -68,16 +80,7 @@ function App() {
       route: '/shawtawt',
       description: 'show messages based on timestamp',
     },
-    {
-      title: 'EmailPromo',
-      route: '/emailpromo',
-      description: 'create an email message with given settings using ai',
-    },
-    {
-      title: 'EmailSend',
-      route: '/emailsend',
-      description: 'verify email address and send email',
-    },
+
     {
       title: 'Onboarding',
       route: '/onboarding',
@@ -91,7 +94,7 @@ function App() {
     {
       title: 'Encryption',
       route: '/encryption',
-      description: 'encryption of text',
+      description: 'encrypt text',
     },
   ];
 

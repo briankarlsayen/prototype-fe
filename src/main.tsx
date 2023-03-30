@@ -14,27 +14,29 @@ import Onboarding from './components/pages/Onboarding';
 import SocketDisplay from './components/pages/SocketDisplay';
 import Encryption from './components/pages/Encryption';
 
+// * openai-api-key has expired
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     errorElement: <NotFound />,
     children: [
-      {
-        path: '/paraphrase',
-        element: <Paraphraser />,
-      },
+      // {
+      //   path: '/paraphrase',
+      //   element: <Paraphraser />,
+      // },
+
+      // {
+      //   path: '/emailpromo',
+      //   element: <EmailPromo />,
+      // },
+      // {
+      //   path: '/emailsend',
+      //   element: <EmailSend />,
+      // },
       {
         path: '/shawtawt',
         element: <Shawtawt />,
-      },
-      {
-        path: '/emailpromo',
-        element: <EmailPromo />,
-      },
-      {
-        path: '/emailsend',
-        element: <EmailSend />,
       },
       {
         path: '/reminders',
