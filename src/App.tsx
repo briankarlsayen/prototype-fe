@@ -1,28 +1,36 @@
 import { Outlet, Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaTools } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import Home from './components/Home';
 import useColorMode from './components/hooks/useColorMode';
 import { FaSun, FaMoon } from 'react-icons/fa';
 
-interface IProps {
-  title: string;
-  route: string;
+interface IProps extends SidebarProps {
+  // title: string;
+  // route: string;
   loc: string;
   setModalShow?: any;
-  desc: string;
+  // description: string;
 }
 
 interface SidebarProps {
   title: string;
   route: string;
   description: string;
+  ongoing?: boolean;
 }
 
 const breakPoint = 768;
 
-const SidebarItem = ({ title, route, loc, setModalShow, desc }: IProps) => {
+const SidebarItem = ({
+  title,
+  route,
+  loc,
+  setModalShow,
+  description,
+  ongoing,
+}: IProps) => {
   return (
     <li
       className={
@@ -38,10 +46,15 @@ const SidebarItem = ({ title, route, loc, setModalShow, desc }: IProps) => {
         to={route}
       >
         <p
-          data-tip={desc}
+          data-tip={description}
           className='tooltip flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-400 dark:hover:bg-gray-500 cursor-pointer'
         >
           {title}
+          {ongoing && (
+            <span className='pl-2 text-red-400'>
+              <FaTools />
+            </span>
+          )}
         </p>
       </Link>
     </li>
@@ -100,6 +113,7 @@ function App() {
       title: 'ApiTester',
       route: '/api-tester',
       description: 'test api routes',
+      ongoing: true,
     },
   ];
 
@@ -150,7 +164,8 @@ function App() {
                     route={item.route}
                     loc={location.pathname}
                     setModalShow={setModalShow}
-                    desc={item.description}
+                    description={item.description}
+                    ongoing={item.ongoing}
                   />
                 );
               })}
