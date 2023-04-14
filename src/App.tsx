@@ -96,6 +96,11 @@ function App() {
       route: '/encryption',
       description: 'encrypt text',
     },
+    {
+      title: 'ApiTester',
+      route: '/api-tester',
+      description: 'test api routes',
+    },
   ];
 
   const checkWinWidth = () => {

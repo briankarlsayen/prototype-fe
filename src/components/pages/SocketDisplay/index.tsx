@@ -30,6 +30,8 @@ const SocketDisplay = () => {
   const [socketErr, setSocketErr] = useState(false);
   const [spinAction, setSpinAction] = useState(false);
   const [callback, setCallback] = useState(false);
+  const [message, setMessage] = useState('');
+  const [isSender, setSender] = useState(false);
 
   const updateField = (e: any) => {
     setInputText({
@@ -96,6 +98,7 @@ const SocketDisplay = () => {
       socketCon ? socketCon.room : '',
       async (data: any) => {
         if (data) {
+          console.log('data', data);
           return setDatas((prevArr) => [data, ...(prevArr ?? [])]);
         }
       }
@@ -116,6 +119,12 @@ const SocketDisplay = () => {
         <pre>{datas.length ? `${JSON.stringify(datas, null, 2)},` : ''}</pre>
       </ul>
     );
+  };
+
+  const handleSubmitMessage = (e: any) => {
+    e.preventDefault();
+    useSocket?.data?.emit(inputText.room, message);
+    setMessage('');
   };
 
   return (
@@ -169,9 +178,56 @@ const SocketDisplay = () => {
           {connectionBadge()}
         </div>
         <hr className='mb-4' />
-        {displaySocketRes()}
+        <div className='flex pb-4'>
+          <div className='relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in'>
+            <input
+              type='checkbox'
+              name='toggle'
+              id='toggle'
+              checked={isSender}
+              onChange={(e) => setSender(e.target.checked)}
+              className='toggle-checkbox absolute block w-6 h-6 rounded-full bg-white appearance-none cursor-pointer'
+            />
+            <label
+              htmlFor='toggle'
+              className='toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer'
+            ></label>
+          </div>
+          <label>
+            {isSender ? 'Listen to socket' : 'Send message to socket'}
+          </label>
+        </div>
+        {isSender ? (
+          <SocketMessageForm
+            handleSubmitMessage={handleSubmitMessage}
+            message={message}
+            setMessage={setMessage}
+          />
+        ) : (
+          displaySocketRes()
+        )}
       </div>
     </div>
+  );
+};
+
+const SocketMessageForm = ({
+  handleSubmitMessage,
+  message,
+  setMessage,
+}: any) => {
+  return (
+    <form onSubmit={handleSubmitMessage}>
+      <input
+        type='text'
+        className='form-control'
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+      />
+      <button className='btn btn-info mt-8 mb-2' type='submit'>
+        Send
+      </button>
+    </form>
   );
 };
 
