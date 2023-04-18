@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { routesPostApi } from '../../../api/apis';
+import SelectInput from '../../../globalComponents/SelectInput';
 
 const Encryption = () => {
+  const encryptionTypes = ['AES', 'RSA'];
+
   const [spinAction, setSpinAction] = useState({
     generateKey: false,
     encrypt: false,
@@ -13,7 +16,7 @@ const Encryption = () => {
     text: '',
     encryptedText: '',
   });
-  const [encType, setEncType] = useState('AES');
+  const [encType, setEncType] = useState(encryptionTypes[0]);
   const [encryptKeys, setEncriptKeys] = useState({
     privateKey: '',
     publicKey: '',
@@ -22,8 +25,6 @@ const Encryption = () => {
     encrypt: '',
     decrypt: '',
   });
-
-  const handleSubmit = () => {};
 
   const updateField = (e: any) => {
     setInputText({
@@ -117,7 +118,7 @@ const Encryption = () => {
             <label className='label'>
               <span className='label-text'>Encryption Type</span>
             </label>
-            <select
+            {/* <select
               className='select select-bordered w-full max-w-xs'
               name='type'
               required
@@ -130,7 +131,13 @@ const Encryption = () => {
               <option defaultValue='RSA' value='RSA'>
                 RSA
               </option>
-            </select>
+            </select> */}
+            <SelectInput
+              onchange={updateEncryptType}
+              label='Encryption Type'
+              options={encryptionTypes}
+              value={encType}
+            />
           </div>
           <div className={`${encType === 'RSA' ? 'block' : 'hidden'}`}>
             <div className='flex gap-4'>
