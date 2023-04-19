@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { routesPostApi } from '../../../api/apis';
 import axios, { AxiosError } from 'axios';
 import SelectInput from '../../../globalComponents/SelectInput';
 import FormDataInput from '../../../globalComponents/FormDataInput';
+import { FaPlus } from 'react-icons/fa';
 
 interface ApiOptions {
   params: any;
@@ -11,6 +12,8 @@ interface ApiOptions {
 interface IReqApiError extends Error {
   code: any;
 }
+
+// TODO generate new objInputs
 
 const ApiTester = () => {
   const apiMethods = ['POST', 'GET', 'PUT'];
@@ -22,6 +25,10 @@ const ApiTester = () => {
   const [spinAction, setSpinAction] = useState(false);
   const [result, setResult] = useState({});
   const [method, setMethod] = useState(apiMethods[0]);
+  const [objKeyVal, setObjectKeyVal] = useState([
+    { title: '', name1: '', val1: '', name2: '', val2: '' },
+  ]);
+  // const [paramsArr, setParamsArr] = useState([{ name: '', key: '', val: 'q' }]);
 
   const reqApi = async ({ params }: ApiOptions) => {
     console.log('method', method);
@@ -49,16 +56,23 @@ const ApiTester = () => {
     try {
       setSpinAction(true);
       setResult({});
+      const paramsArr = objKeyVal.map((val) => {
+        return {
+          [val.val1]: val.val2,
+        };
+      });
 
-      const params = {
-        username: inputText.username,
-        password: inputText.password,
-      };
+      const params = paramsArr.reduce((result, currentObj) => {
+        return Object.assign(result, currentObj);
+      }, {});
 
-      let res = await reqApi({ params });
-      if (res) {
-        setResult(res?.data);
-      }
+      console.log('params', params);
+
+      // let res = await reqApi({ params });
+      // if (res) {
+      //   setResult(res?.data);
+      // }
+      console.log('objKeyVal', objKeyVal);
       setSpinAction(false);
     } catch (_e) {
       const err = _e as IReqApiError;
@@ -80,6 +94,115 @@ const ApiTester = () => {
     });
   };
 
+  const updateParamsField = (e: any) => {
+    console.log('e.target.name', e.target.name);
+    const splitName = e.target.name.split('-');
+    // console.log('splitName', splitName);
+    const objPropery = splitName.pop();
+
+    const val: string = e.target.value;
+
+    const joinedName = splitName.join('-');
+
+    console.log('joinedName', joinedName);
+    console.log('val', val);
+    console.log('objPropery', objPropery);
+
+    const idx = objKeyVal.findIndex((el) => el.title === joinedName);
+    if (idx === -1) return null;
+    const obj = objKeyVal[idx];
+    switch (objPropery) {
+      case 'name1':
+        obj.name1 = val;
+        break;
+      case 'name2':
+        obj.name2 = val;
+        break;
+      case 'val1':
+        obj.val1 = val;
+        break;
+      case 'val2':
+        obj.val2 = val;
+        break;
+    }
+
+    console.log('obj', obj);
+
+    // * check if obj name exist
+    console.log('idx', idx);
+    const newArr = objKeyVal;
+    newArr.splice(idx, 0);
+    console.log('newArr', newArr);
+    setObjectKeyVal(newArr);
+    // if (idx === -1) {
+    //   // * create
+    //   setObjectKeyVal([...objKeyVal, obj]);
+    // } else {
+    //   // * update
+    //   const newArr = objKeyVal;
+    //   newArr.splice(idx, 0);
+    //   setObjectKeyVal(newArr);
+    // }
+
+    // const idx = paramsArr.findIndex((el) => el.name === joinedName);
+    // const obj = paramsArr[idx] ?? { name: joinedName, key: '', val: '' };
+    // switch (objPropery) {
+    //   case 'key':
+    //     obj.key = val;
+    //     break;
+    //   case 'val':
+    //     obj.val = val;
+    //     break;
+    // }
+
+    // // * check if obj name exist
+    // if (idx === -1) {
+    //   // * create
+    //   setParamsArr([...paramsArr, obj]);
+    // } else {
+    //   // * update
+    //   const newArr = paramsArr;
+    //   newArr.splice(idx, 0);
+    //   setParamsArr(newArr);
+    // }
+  };
+
+  function generateUUID() {
+    var d = new Date().getTime();
+    var d2 =
+      (typeof performance !== 'undefined' &&
+        performance.now &&
+        performance.now() * 1000) ||
+      0;
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(
+      /[xy]/g,
+      function (c) {
+        var r = Math.random() * 16;
+        if (d > 0) {
+          //Use timestamp until depleted
+          r = (d + r) % 16 | 0;
+          d = Math.floor(d / 16);
+        } else {
+          //Use microseconds since page-load if supported
+          r = (d2 + r) % 16 | 0;
+          d2 = Math.floor(d2 / 16);
+        }
+        return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16);
+      }
+    );
+  }
+
+  const generateKeyValName = () => {
+    const uuid = generateUUID();
+    return {
+      title: uuid,
+      name1: `${uuid}-name1`,
+      val1: `${uuid}-val1`,
+      name2: `${uuid}-name2`,
+      val2: `${uuid}-val2`,
+    };
+  };
+
   const displaySocketRes = () => {
     return (
       <ul className='text-white text-sm'>
@@ -95,6 +218,20 @@ const ApiTester = () => {
   const updateSelectVal = (e: any) => {
     setMethod(e.target.value);
   };
+
+  useEffect(() => {
+    setObjectKeyVal([generateKeyValName()]);
+  }, []);
+
+  const newInputFormHandler = () => {
+    console.log('[...objKeyVal, generateKeyValName()]', [
+      ...objKeyVal,
+      generateKeyValName(),
+    ]);
+    setObjectKeyVal([...objKeyVal, generateKeyValName()]);
+  };
+
+  console.log('objKeyVal', objKeyVal);
 
   return (
     <div className='flex gap-4 h-full'>
@@ -122,7 +259,7 @@ const ApiTester = () => {
             />
           </div>
 
-          <div className='form-control'>
+          {/* <div className='form-control'>
             <label className='label'>
               <span className='label-text'>Username</span>
             </label>
@@ -146,14 +283,33 @@ const ApiTester = () => {
               className='socket-input'
               required
             />
-          </div>
-          {/* <div>
-            <div className='flex justify-around'>
-              <label>username</label>
-              <label>username</label>
-            </div>
-            <FormDataInput keyVal={'username'} value={'username'} />
           </div> */}
+          <div>
+            <div className='flex justify-around'>
+              <label>key</label>
+              <label>value</label>
+            </div>
+            {objKeyVal.map((el, i) => {
+              return (
+                <FormDataInput
+                  key={el.title}
+                  name1={el.name1}
+                  name2={el.name2}
+                  val1={el.val1}
+                  val2={el.val2}
+                  updateParamsField={updateParamsField}
+                />
+              );
+            })}
+          </div>
+          <button
+            type='button'
+            className='btn btn-primary w-fit mt-4'
+            onClick={newInputFormHandler}
+          >
+            <FaPlus />
+            Add
+          </button>
           <button
             type='submit'
             className={`btn btn-info mt-8 mb-2 ${spinAction && 'loading'}`}

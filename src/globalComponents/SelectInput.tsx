@@ -12,7 +12,7 @@ const SelectInput = ({ onchange, label, options, value }: PSelectInput) => {
 
   return (
     <select
-      className='select select-bordered w-full max-w-xs'
+      className='select select-bordered w-full max-w-xs py-2'
       name='type'
       required
       onChange={onchange}

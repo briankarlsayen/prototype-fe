@@ -1,14 +1,20 @@
 import React from 'react';
 
-const FormDataInput = ({ keyVal, value }: any) => {
+const FormDataInput = ({
+  name1,
+  name2,
+  val1,
+  val2,
+  updateParamsField,
+}: any) => {
   return (
     <div className='flex gap-2 justify-between'>
       <div className='form-control'>
         <input
           type='text'
-          name={keyVal}
-          value={keyVal}
-          // onChange={}
+          name={name1}
+          value={val1}
+          onChange={updateParamsField}
           className='socket-input'
           required
         />
@@ -16,9 +22,9 @@ const FormDataInput = ({ keyVal, value }: any) => {
       <div className='form-control'>
         <input
           type='text'
-          name={value}
-          value={value}
-          // onChange={}
+          name={name2}
+          value={val2}
+          onChange={updateParamsField}
           className='socket-input'
           required
         />
