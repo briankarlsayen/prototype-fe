@@ -64,6 +64,12 @@ const ApiTester = () => {
     setObjectKeyVal(newArr);
   };
 
+  const removeInputField = (index: number) => {
+    const newArr = [...objKeyVal];
+    newArr.splice(index, 1);
+    setObjectKeyVal(newArr);
+  };
+
   function generateUUID() {
     var d = new Date().getTime();
     var d2 =
@@ -129,7 +135,7 @@ const ApiTester = () => {
   };
 
   return (
-    <div className='flex gap-4 h-full'>
+    <div className='flex lg:flex-row flex-col gap-4 h-full'>
       <div className='dark:bg-slate-700 min-w-[20rem] rounded-md p-4 border border-gray-500 mb-8 basis-1/3'>
         <h2 className='mb-4'>Params</h2>
         <hr className='mb-4' />
@@ -138,9 +144,14 @@ const ApiTester = () => {
             <label className='label'>
               <span className='label-text'>Url</span>
             </label>
-            <div>
-              <input type='text' name='url' onChange={updateField} required />
-            </div>
+            <input
+              type='text'
+              name='url'
+              className='input input-bordered w-full max-w-xs'
+              value={inputText.url}
+              onChange={updateField}
+              required
+            />
           </div>
           <div className='form-control'>
             <label className='label'>
@@ -154,13 +165,14 @@ const ApiTester = () => {
             />
           </div>
           <div>
-            <div className='flex justify-around label-text'>
-              <label className='label'>
+            <div className='flex label-text gap-2'>
+              <label className='label w-full'>
                 <span className='label-text'>key</span>
               </label>
-              <label className='label'>
+              <label className='label w-full'>
                 <span className='label-text'>value</span>
               </label>
+              <div className='w-8'></div>
             </div>
             <div className='flex flex-col gap-2'>
               {objKeyVal.length
@@ -174,6 +186,8 @@ const ApiTester = () => {
                         val1={el.val1}
                         val2={el.val2}
                         updateParamsField={updateParamsField}
+                        removeInputField={removeInputField}
+                        len={objKeyVal.length}
                       />
                     );
                   })
@@ -182,11 +196,11 @@ const ApiTester = () => {
           </div>
           <button
             type='button'
-            className='btn btn-primary w-fit mt-4'
+            className='btn btn-accent w-fit mt-4 self-end mr-6'
             onClick={newInputFormHandler}
           >
             <FaPlus />
-            Add
+            {/* Add */}
           </button>
           <button
             type='submit'
