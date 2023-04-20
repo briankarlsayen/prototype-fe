@@ -1,19 +1,8 @@
 import { useEffect, useState } from 'react';
-import { routesPostApi } from '../../../api/apis';
-import axios, { AxiosError } from 'axios';
 import SelectInput from '../../../globalComponents/SelectInput';
-import FormDataInput from '../../../globalComponents/FormDataInput';
+import FormDataInput from './FormDataInput';
 import { FaPlus } from 'react-icons/fa';
-
-interface ApiOptions {
-  params: any;
-}
-
-interface IReqApiError extends Error {
-  code: any;
-}
-
-// TODO generate new objInputs
+import { api } from './RequestHandler';
 
 const ApiTester = () => {
   const apiMethods = ['POST', 'GET', 'PUT'];
@@ -28,28 +17,6 @@ const ApiTester = () => {
   const [objKeyVal, setObjectKeyVal] = useState([
     { title: '', name1: '', val1: '', name2: '', val2: '' },
   ]);
-  // const [paramsArr, setParamsArr] = useState([{ name: '', key: '', val: 'q' }]);
-
-  const reqApi = async ({ params }: ApiOptions) => {
-    console.log('method', method);
-    switch (method) {
-      case 'POST':
-        console.log('pot');
-        return await routesPostApi({
-          routeName: `${inputText?.url}/api/auth/login`,
-          params,
-        });
-        return await axios.post(`${inputText?.url}/api/auth/login`, params);
-      case 'GET':
-        console.log('get');
-        return await axios.get(`${inputText?.url}/api/auth/login`, params);
-      case 'PUT':
-        return await axios.put(`${inputText?.url}/api/auth/login`, params);
-      default:
-        console.log('Invalid method', method);
-        return null;
-    }
-  };
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -66,24 +33,12 @@ const ApiTester = () => {
         return Object.assign(result, currentObj);
       }, {});
 
-      console.log('params', params);
-
-      // let res = await reqApi({ params });
-      // if (res) {
-      //   setResult(res?.data);
-      // }
-      console.log('objKeyVal', objKeyVal);
+      const res = await api({ url: inputText.url, method, params });
+      setResult(res);
       setSpinAction(false);
     } catch (_e) {
-      const err = _e as IReqApiError;
+      console.log('_e', _e);
       setSpinAction(false);
-      if (err?.code === 'ERR_BAD_REQUEST') {
-        setResult({
-          error: err?.code,
-          message: err?.message,
-          name: err?.name,
-        });
-      }
     }
   };
 
@@ -94,77 +49,19 @@ const ApiTester = () => {
     });
   };
 
-  const updateParamsField = (e: any) => {
-    console.log('e.target.name', e.target.name);
-    const splitName = e.target.name.split('-');
-    // console.log('splitName', splitName);
-    const objPropery = splitName.pop();
+  const getInputName = (name: string) => {
+    const nameArr = name.split('-');
+    return nameArr.pop();
+  };
 
-    const val: string = e.target.value;
-
-    const joinedName = splitName.join('-');
-
-    console.log('joinedName', joinedName);
-    console.log('val', val);
-    console.log('objPropery', objPropery);
-
-    const idx = objKeyVal.findIndex((el) => el.title === joinedName);
-    if (idx === -1) return null;
-    const obj = objKeyVal[idx];
-    switch (objPropery) {
-      case 'name1':
-        obj.name1 = val;
-        break;
-      case 'name2':
-        obj.name2 = val;
-        break;
-      case 'val1':
-        obj.val1 = val;
-        break;
-      case 'val2':
-        obj.val2 = val;
-        break;
-    }
-
-    console.log('obj', obj);
-
-    // * check if obj name exist
-    console.log('idx', idx);
-    const newArr = objKeyVal;
-    newArr.splice(idx, 0);
-    console.log('newArr', newArr);
+  const updateParamsField = (e: any, index: number) => {
+    const { target } = e;
+    const { value, name } = target;
+    const newArr = [...objKeyVal];
+    const inputName = getInputName(name);
+    inputName === 'name1' ? (newArr[index].val1 = value) : null;
+    inputName === 'name2' ? (newArr[index].val2 = value) : null;
     setObjectKeyVal(newArr);
-    // if (idx === -1) {
-    //   // * create
-    //   setObjectKeyVal([...objKeyVal, obj]);
-    // } else {
-    //   // * update
-    //   const newArr = objKeyVal;
-    //   newArr.splice(idx, 0);
-    //   setObjectKeyVal(newArr);
-    // }
-
-    // const idx = paramsArr.findIndex((el) => el.name === joinedName);
-    // const obj = paramsArr[idx] ?? { name: joinedName, key: '', val: '' };
-    // switch (objPropery) {
-    //   case 'key':
-    //     obj.key = val;
-    //     break;
-    //   case 'val':
-    //     obj.val = val;
-    //     break;
-    // }
-
-    // // * check if obj name exist
-    // if (idx === -1) {
-    //   // * create
-    //   setParamsArr([...paramsArr, obj]);
-    // } else {
-    //   // * update
-    //   const newArr = paramsArr;
-    //   newArr.splice(idx, 0);
-    //   setParamsArr(newArr);
-    // }
   };
 
   function generateUUID() {
@@ -197,9 +94,9 @@ const ApiTester = () => {
     return {
       title: uuid,
       name1: `${uuid}-name1`,
-      val1: `${uuid}-val1`,
+      val1: '',
       name2: `${uuid}-name2`,
-      val2: `${uuid}-val2`,
+      val2: '',
     };
   };
 
@@ -231,8 +128,6 @@ const ApiTester = () => {
     setObjectKeyVal([...objKeyVal, generateKeyValName()]);
   };
 
-  console.log('objKeyVal', objKeyVal);
-
   return (
     <div className='flex gap-4 h-full'>
       <div className='dark:bg-slate-700 min-w-[20rem] rounded-md p-4 border border-gray-500 mb-8 basis-1/3'>
@@ -241,7 +136,7 @@ const ApiTester = () => {
         <form className='flex flex-col' onSubmit={handleSubmit}>
           <div className='form-control'>
             <label className='label'>
-              <span className='label-text'>Base url</span>
+              <span className='label-text'>Url</span>
             </label>
             <div>
               <input type='text' name='url' onChange={updateField} required />
@@ -253,54 +148,37 @@ const ApiTester = () => {
             </label>
             <SelectInput
               onchange={updateSelectVal}
-              label='Encryption Type'
+              label='Request Method'
               options={apiMethods}
               value={method}
             />
           </div>
-
-          {/* <div className='form-control'>
-            <label className='label'>
-              <span className='label-text'>Username</span>
-            </label>
-            <div>
-              <input
-                type='text'
-                name='username'
-                onChange={updateField}
-                required
-              />
-            </div>
-          </div>
-          <div className='form-control'>
-            <label className='label'>
-              <span className='label-text'>Password</span>
-            </label>
-            <input
-              type='text'
-              name='password'
-              onChange={updateField}
-              className='socket-input'
-              required
-            />
-          </div> */}
           <div>
-            <div className='flex justify-around'>
-              <label>key</label>
-              <label>value</label>
+            <div className='flex justify-around label-text'>
+              <label className='label'>
+                <span className='label-text'>key</span>
+              </label>
+              <label className='label'>
+                <span className='label-text'>value</span>
+              </label>
             </div>
-            {objKeyVal.map((el, i) => {
-              return (
-                <FormDataInput
-                  key={el.title}
-                  name1={el.name1}
-                  name2={el.name2}
-                  val1={el.val1}
-                  val2={el.val2}
-                  updateParamsField={updateParamsField}
-                />
-              );
-            })}
+            <div className='flex flex-col gap-2'>
+              {objKeyVal.length
+                ? objKeyVal.map((el, i) => {
+                    return (
+                      <FormDataInput
+                        key={el.title}
+                        index={i}
+                        name1={el.name1}
+                        name2={el.name2}
+                        val1={el.val1}
+                        val2={el.val2}
+                        updateParamsField={updateParamsField}
+                      />
+                    );
+                  })
+                : null}
+            </div>
           </div>
           <button
             type='button'

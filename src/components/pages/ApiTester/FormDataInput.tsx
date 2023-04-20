@@ -1,6 +1,7 @@
 import React from 'react';
 
 const FormDataInput = ({
+  index,
   name1,
   name2,
   val1,
@@ -14,7 +15,7 @@ const FormDataInput = ({
           type='text'
           name={name1}
           value={val1}
-          onChange={updateParamsField}
+          onChange={(e) => updateParamsField(e, index)}
           className='socket-input'
           required
         />
@@ -24,7 +25,7 @@ const FormDataInput = ({
           type='text'
           name={name2}
           value={val2}
-          onChange={updateParamsField}
+          onChange={(e) => updateParamsField(e, index)}
           className='socket-input'
           required
         />

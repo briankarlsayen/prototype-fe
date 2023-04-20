@@ -113,7 +113,6 @@ function App() {
       title: 'ApiTester',
       route: '/api-tester',
       description: 'test api routes',
-      ongoing: true,
     },
   ];
 
