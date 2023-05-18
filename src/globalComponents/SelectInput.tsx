@@ -1,11 +1,18 @@
 interface PSelectInput {
+  name?: string;
   onchange: any;
   label: string;
   options: string[];
   value: string;
 }
 
-const SelectInput = ({ onchange, label, options, value }: PSelectInput) => {
+const SelectInput = ({
+  name,
+  onchange,
+  label,
+  options,
+  value,
+}: PSelectInput) => {
   const Options = ({ val }: any) => {
     return <option value={val}>{val}</option>;
   };
@@ -13,7 +20,7 @@ const SelectInput = ({ onchange, label, options, value }: PSelectInput) => {
   return (
     <select
       className='select select-bordered w-full max-w-xs py-2'
-      name='type'
+      name={name ?? 'type'}
       required
       onChange={onchange}
       value={value}

@@ -14,6 +14,7 @@ import Onboarding from './components/pages/Onboarding';
 import SocketDisplay from './components/pages/SocketDisplay';
 import Encryption from './components/pages/Encryption';
 import ApiTester from './components/pages/ApiTester';
+import ScreenShoter from './components/pages/Screenshoter';
 
 // * openai-api-key has expired
 const router = createBrowserRouter([
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: '/api-tester',
         element: <ApiTester />,
+      },
+      {
+        path: '/screenshoter',
+        element: <ScreenShoter />,
       },
     ],
   },

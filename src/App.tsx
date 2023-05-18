@@ -114,6 +114,11 @@ function App() {
       route: '/api-tester',
       description: 'test api routes',
     },
+    {
+      title: 'Screenshoter',
+      route: '/screenshoter',
+      description: 'screen a website',
+    },
   ];
 
   const checkWinWidth = () => {
