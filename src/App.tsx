@@ -119,6 +119,11 @@ function App() {
       route: '/screenshoter',
       description: 'screen a website',
     },
+    {
+      title: 'Text Editor',
+      route: '/text-editor',
+      description: 'write text using Editor.js',
+    },
   ];
 
   const checkWinWidth = () => {
