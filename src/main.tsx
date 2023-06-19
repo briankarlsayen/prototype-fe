@@ -16,6 +16,7 @@ import Encryption from './components/pages/Encryption';
 import ApiTester from './components/pages/ApiTester';
 import ScreenShoter from './components/pages/Screenshoter';
 import TextEditor from './components/pages/TextEditor';
+import FormikForm from './components/pages/FormikForm';
 
 // * openai-api-key has expired
 const router = createBrowserRouter([
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: '/text-editor',
         element: <TextEditor />,
+      },
+      {
+        path: '/formik-form',
+        element: <FormikForm />,
       },
     ],
   },

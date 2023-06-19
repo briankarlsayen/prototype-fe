@@ -124,6 +124,11 @@ function App() {
       route: '/text-editor',
       description: 'write text using Editor.js',
     },
+    {
+      title: 'Formik Form',
+      route: '/formik-form',
+      description: 'form using formik, yup, and MUI v5',
+    },
   ];
 
   const checkWinWidth = () => {
