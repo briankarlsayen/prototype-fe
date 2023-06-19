@@ -4,6 +4,7 @@ import { Toast } from './middleware';
 interface PApi {
   routeName: string;
   params?: {};
+  config?: {};
 }
 
 interface PErrorAlert {
@@ -50,6 +51,28 @@ const apiErrorAlert = (params: PErrorAlert) => {
 export const routesPostApi = async (props: PApi) => {
   return api
     .post(props.routeName, props.params)
+    .then((res: any) => {
+      console.log('res1', res);
+      return res;
+    })
+    .catch((err) => {
+      console.log('err', err.response.data);
+      const status = err.response === undefined ? 12023 : err.response.status;
+      const message =
+        err.response === undefined
+          ? 'Server Maintenance!'
+          : err.response.data.message;
+      apiErrorAlert({ status, message });
+      return {
+        data: err.response?.data,
+        status,
+      };
+    });
+};
+
+export const routesGetApi = async (props: PApi) => {
+  return api
+    .get(props.routeName, props.config)
     .then((res: any) => {
       console.log('res1', res);
       return res;
