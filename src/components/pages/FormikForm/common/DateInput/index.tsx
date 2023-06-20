@@ -32,6 +32,8 @@ const FormikDateInput = ({
   ) => {
     form.setFieldValue(field.name, event.target.value);
   };
+
+  console.log('label1', label);
   return (
     <DateInput
       variant='outlined'

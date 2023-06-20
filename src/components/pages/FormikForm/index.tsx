@@ -4,6 +4,7 @@ import DateInput from './common/DateInput';
 import { Button, Paper, TextField } from '@mui/material';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
+import FormikDateInput from './common/DateInput';
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required('Name is required'),
@@ -34,7 +35,7 @@ const FormikForm = () => {
             label='Name'
             variant='outlined'
             fullWidth
-            render={DateInput}
+            render={FormikDateInput}
           />
           <ErrorMessage name='name' component='div' />
         </div>
