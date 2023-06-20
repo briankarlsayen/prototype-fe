@@ -1,6 +1,6 @@
 import React from 'react';
 import { FieldProps } from 'formik';
-import CurrencyInput from '../../common/CurrencyInput';
+import CurrencyInput from './common/CurrencyInput';
 
 interface FormikCurrencyInputProps extends FieldProps {
   isRequired: boolean;
@@ -37,7 +37,7 @@ const FormikCurrencyInput = ({
 
   return (
     <CurrencyInput
-      variant="outlined"
+      variant='outlined'
       fullWidth
       placeholder={placeholder}
       label={label}
