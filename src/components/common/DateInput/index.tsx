@@ -4,35 +4,32 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider, DateField } from '@mui/x-date-pickers';
 import { Box, FormHelperText, InputAdornment } from '@mui/material';
 import { useStyles } from './index.styles';
-import { Icon } from '../Icon';
+// import { Icon } from '../Icon';
 
 const DateInput = ({
   text,
   label,
   onValueChange,
   helperText,
+  onChange,
   ...rest
 }: any) => {
-  const [date, setDate] = useState(null);
-  const styles = useStyles();
   return (
-    <Box className={styles.container}>
-      <Box className={styles.label}>{label}</Box>
+    <Box>
+      <Box>{label}</Box>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DateField
-          className={styles.dateField}
-          value={date}
           onChange={(newValue: any) => {
-            onValueChange(newValue?.$d);
-            setDate(newValue?.$d);
+            onValueChange(new Date(newValue));
           }}
           InputProps={{
             startAdornment: (
-              <InputAdornment className={styles.adornment} position='start'>
-                <Icon name='datepicker-calendar' />
+              <InputAdornment position='start'>
+                {/* <Icon name='datepicker-calendar' /> */}
               </InputAdornment>
             ),
           }}
+          {...rest}
         />
       </LocalizationProvider>
       {helperText && <FormHelperText error>{helperText}</FormHelperText>}

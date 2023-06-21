@@ -19,11 +19,9 @@ const FormikDateInput = ({
   const onValueChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    console.log('event', event);
     form.setFieldValue(field.name, event);
   };
-  // console.log('rest', rest);
-  // console.log('onValueChange', onValueChange);
+
   return (
     <DateInput
       variant='outlined'

@@ -1,5 +1,5 @@
 import { FieldProps } from 'formik';
-import { SpelInputCustomEvent } from '../../../temp_spel_libs/@kinesso/splash-elements';
+// import { SpelInputCustomEvent } from '../../../temp_spel_libs/@kinesso/splash-elements';
 import TextField from '../../common/TextField';
 
 interface FormikTextFieldProps extends FieldProps {
@@ -25,7 +25,8 @@ const FormikTextField = ({
       : ''
   ) as string;
 
-  const onValueChange = (event: SpelInputCustomEvent<HTMLInputElement>) => {
+  const onValueChange = (event: any) => {
+    console.log('click');
     form.setFieldValue(field.name, event.detail.value);
   };
 
