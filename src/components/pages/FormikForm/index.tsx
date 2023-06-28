@@ -4,6 +4,7 @@ import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import FormikTextField from '../../FormikElements/TextField';
 import FormikDateInput from '../../FormikElements/DateInput';
+import FormikCurrencyInput from '../../FormikElements/CurrencyInput';
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required('Name is required'),
@@ -48,6 +49,15 @@ const FormikForm = () => {
               placeholder='MM/DD/YYYY'
               fullWidth
               component={FormikDateInput}
+            />
+            <ErrorMessage name='name' component='div' />
+          </div>
+          <div>
+            <Field
+              name='budget'
+              adornment='AUD'
+              placeholder='10,000'
+              component={FormikCurrencyInput}
             />
             <ErrorMessage name='name' component='div' />
           </div>

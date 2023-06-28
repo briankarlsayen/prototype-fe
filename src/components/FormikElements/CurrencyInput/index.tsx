@@ -1,16 +1,16 @@
 import React from 'react';
-// import { FieldProps } from 'formik';
-import CurrencyInput from './common/CurrencyInput';
+import { FieldProps } from 'formik';
+import CurrencyInput from '../../common/CurrencyInput';
 
-// interface FormikCurrencyInputProps extends FieldProps {
-//   isRequired: boolean;
-//   placeholder?: string;
-//   label?: string;
-//   addon?: string;
-//   dataTestId?: string;
-//   type: string;
-//   adornment?: string;
-// }
+interface FormikCurrencyInputProps extends FieldProps {
+  isRequired: boolean;
+  placeholder?: string;
+  label?: string;
+  addon?: string;
+  dataTestId?: string;
+  type: string;
+  adornment?: string;
+}
 
 const FormikCurrencyInput = ({
   field,
@@ -22,7 +22,7 @@ const FormikCurrencyInput = ({
   dataTestId,
   adornment,
   ...rest
-}: any) => {
+}: FormikCurrencyInputProps) => {
   const errorText = (
     form.touched?.[field?.name] && form.errors?.[field?.name]
       ? form.errors?.[field?.name]
