@@ -10,6 +10,7 @@ const validationSchema = Yup.object().shape({
   name: Yup.string().required('Name is required'),
   email: Yup.string().email('Invalid email').required('Email is required'),
   dateStart: Yup.date().nullable(),
+  budgetStart: Yup.string().required('Budget is required').length(5),
 });
 
 const FormikForm = () => {
@@ -17,6 +18,7 @@ const FormikForm = () => {
     name: '',
     email: '',
     dateStart: null,
+    budgetStart: '',
   };
 
   // Handle form submission
@@ -54,8 +56,8 @@ const FormikForm = () => {
           </div>
           <div>
             <Field
-              name='budget'
-              adornment='AUD'
+              name='budgetStart'
+              // adornment='AUD'
               placeholder='10,000'
               component={FormikCurrencyInput}
             />
@@ -86,7 +88,11 @@ const FormikForm = () => {
             variant='contained'
             color='error'
             onClick={formik.resetForm}
-            disabled={!formik.values.name && !formik.values.dateStart}
+            disabled={
+              !formik.values.name &&
+              !formik.values.dateStart &&
+              !formik.values.budgetStart
+            }
           >
             Clear All
           </Button>

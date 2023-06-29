@@ -22,7 +22,7 @@ const FormikCurrencyInput = ({
   dataTestId,
   adornment,
   ...rest
-}: FormikCurrencyInputProps) => {
+}: any) => {
   const errorText = (
     form.touched?.[field?.name] && form.errors?.[field?.name]
       ? form.errors?.[field?.name]
@@ -34,6 +34,8 @@ const FormikCurrencyInput = ({
   ) => {
     form.setFieldValue(field.name, event.target.value);
   };
+
+  console.log('field', field);
 
   return (
     <CurrencyInput

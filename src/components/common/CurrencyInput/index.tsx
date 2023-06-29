@@ -1,54 +1,95 @@
-import React from 'react';
-// import { FieldProps } from 'formik';
-import CurrencyInput from './common/CurrencyInput';
+import React, { useEffect, useState } from 'react';
+import {
+  Box,
+  TextField,
+  OutlinedTextFieldProps,
+  InputBaseComponentProps,
+  InputAdornment,
+  FormHelperText,
+} from '@mui/material';
+// import { useStyles } from './index.styles';
+// import { NumericFormat } from 'react-number-format';
 
-// interface FormikCurrencyInputProps extends FieldProps {
-//   isRequired: boolean;
-//   placeholder?: string;
-//   label?: string;
-//   addon?: string;
-//   dataTestId?: string;
-//   type: string;
-//   adornment?: string;
-// }
+interface CurrencyInputProps extends OutlinedTextFieldProps {
+  text?: string;
+  label: string | undefined;
+  adornment?: string;
+  onValueChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
+}
 
-const FormikCurrencyInput = ({
-  field,
-  placeholder,
+const CurrencyInput = ({
+  text,
   label,
-  addon,
-  type,
-  form,
-  dataTestId,
+  onValueChange,
   adornment,
+  helperText,
+  value,
   ...rest
-}: any) => {
-  const errorText = (
-    form.touched?.[field?.name] && form.errors?.[field?.name]
-      ? form.errors?.[field?.name]
-      : ''
-  ) as string;
+}: CurrencyInputProps) => {
+  // const styles = useStyles();
 
-  const onValueChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    form.setFieldValue(field.name, event.target.value);
-  };
+  const [newVal, setVal] = useState('');
+  useEffect(() => {
+    setVal(value as string);
+  }, [value]);
 
   return (
-    <CurrencyInput
-      variant='outlined'
-      fullWidth
-      placeholder={placeholder}
-      label={label}
-      error={Boolean(errorText)}
-      helperText={errorText}
-      onValueChange={onValueChange}
-      adornment={adornment}
-      disabled={form.isSubmitting}
-      {...field}
-    />
+    <Box>
+      <Box>{label}</Box>
+      <TextField
+        value={newVal}
+        {...rest}
+        helperText={undefined}
+        label={undefined}
+        onChange={(e) => {
+          onValueChange(e);
+        }}
+        // InputProps={{
+        //   startAdornment: (
+        //     <>
+        //       {adornment && (
+        //         <InputAdornment className={styles.adornment} position="start">
+        //           {adornment}
+        //         </InputAdornment>
+        //       )}
+        //     </>
+        //   ),
+        //   inputComponent: NumericFormatInput
+        // }}
+      />
+      {helperText && <FormHelperText error>{helperText}</FormHelperText>}
+    </Box>
   );
 };
 
-export default FormikCurrencyInput;
+// const NumericFormatInput = React.forwardRef(
+//   (
+//     { name, onChange, placeholder, inputRef, ...rest }: InputBaseComponentProps,
+//     ref
+//   ) => {
+//     return (
+//       <NumericFormat
+//         itemRef={inputRef}
+//         name={name}
+//         placeholder={placeholder}
+//         autoComplete="off"
+//         onValueChange={(values) => {
+//           // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+//           onChange?.({
+//             target: {
+//               name,
+//               value: values.value
+//             }
+//           } as React.ChangeEvent<HTMLInputElement>);
+//         }}
+//         thousandSeparator
+//       />
+//     );
+//   }
+// );
+
+// NumericFormatInput.displayName = 'NumericFormatInput';
+
+export default CurrencyInput;
